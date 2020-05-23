@@ -1,0 +1,5 @@
+[Web SPR Info]
+Version=2.0
+Product=Quartus II
+Part Number=EP20K30ETC144-1
+Logic Cell Usage=163

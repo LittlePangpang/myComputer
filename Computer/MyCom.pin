@@ -1,0 +1,184 @@
+ -- Copyright (C) 1991-2002 Altera Corporation
+ -- Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+ -- support information,  device programming or simulation file,  and any other
+ -- associated  documentation or information  provided by  Altera  or a partner
+ -- under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+ -- to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+ -- other  use  of such  megafunction  design,  netlist,  support  information,
+ -- device programming or simulation file,  or any other  related documentation
+ -- or information  is prohibited  for  any  other purpose,  including, but not
+ -- limited to  modification,  reverse engineering,  de-compiling, or use  with
+ -- any other  silicon devices,  unless such use is  explicitly  licensed under
+ -- a separate agreement with  Altera  or a megafunction partner.  Title to the
+ -- intellectual property,  including patents,  copyrights,  trademarks,  trade
+ -- secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+ -- support  information,  device programming or simulation file,  or any other
+ -- related documentation or information provided by  Altera  or a megafunction
+ -- partner, remains with Altera, the megafunction partner, or their respective
+ -- licensors. No other licenses, including any licenses needed under any third
+ -- party's intellectual property, are provided herein.
+ ------------------------------------------------------------------------------
+
+
+
+ ------------------------------------------------------------------------------
+ -- N.C.       : No Connect. This pin has no internal connection to the device.
+ -- VCC_INT    : Dedicated power pin, which MUST be connected to VCC  (2.5V).
+ -- VCC_IO     : Dedicated power pin, which MUST be connected to VCC  (Refer to
+ --              the table below for voltage).
+ -- GND        : Dedicated ground pin, which MUST be connected to GND.
+ -- GND+       : Unused input. This pin should be connected to GND. It may also
+ --              be connected  to a  valid signal  on the board  (low, high, or
+ --              toggling)  if that signal is required for a different revision
+ --              of the design.
+ -- GND*       : Unused  I/O  pin.   This pin can either be left unconnected or
+ --              connected to GND.  Connecting this pin to GND will improve the
+ --              device's immunity to noise.
+ ------------------------------------------------------------------------------
+
+
+CHIP  "MyCom"  ASSIGNED TO AN: EP20K30ETC144-1
+VCC_INT                          : 1     :       
+DR1[5]                           : 2     : output : LVTTL             :      
+WE                               : 3     : output : LVTTL             :      
+GND                              : 4     :       
+VCC_IO                           : 5     : 3.3V  
+PC[6]                            : 6     : output : LVTTL             :      
+PC[7]                            : 7     : output : LVTTL             :      
+nSW_BUS                          : 8     : output : LVTTL             :      
+T4                               : 9     : output : LVTTL             :      
+DR1[6]                           : 10    : output : LVTTL             :      
+nALU_BUS                         : 11    : output : LVTTL             :      
+GND_IO                           : 12    :       
+BUS[1]                           : 13    : output : LVTTL             :      
+CE                               : 14    : output : LVTTL             :      
+DR1[7]                           : 15    : output : LVTTL             :      
+VCC_INT                          : 16    :       
+GND                              : 17    :       
+MSEL0                            : 18    :        :                   :      
+MSEL1                            : 19    :        :                   :      
+START                            : 20    : input  : LVTTL             :      
+VCCINT                           : 21    :        :                   :      
+NCONFIG                          : 22    :        :                   :      
+IN[1]                            : 23    : input  : LVTTL             :      
+M                                : 24    : output : LVTTL             :      
+nR0_BUS                          : 25    : output : LVTTL             :      
+IN[2]                            : 26    : input  : LVTTL             :      
+PC[8]                            : 27    : output : LVTTL             :      
+VCC_IO                           : 28    : 3.3V  
+LDPC                             : 29    : output : LVTTL             :      
+IN[7]                            : 30    : input  : LVTTL             :      
+IR[3]                            : 31    : output : LVTTL             :      
+DR1[8]                           : 32    : output : LVTTL             :      
+AR[8]                            : 33    : output : LVTTL             :      
+GND                              : 34    :       
+IR[8]                            : 35    : output : LVTTL             :      
+VCC_INT                          : 36    :       
+AR[6]                            : 37    : output : LVTTL             :      
+AR[5]                            : 38    : output : LVTTL             :      
+AR[1]                            : 39    : output : LVTTL             :      
+R0[2]                            : 40    : output : LVTTL             :      
+R0[1]                            : 41    : output : LVTTL             :      
+GND_IO                           : 42    :       
+IR[2]                            : 43    : output : LVTTL             :      
+IR[1]                            : 44    : output : LVTTL             :      
+VCC_IO                           : 45    : 3.3V  
+DR1[4]                           : 46    : output : LVTTL             :      
+BUS[3]                           : 47    : output : LVTTL             :      
+AR[7]                            : 48    : output : LVTTL             :      
+DR2[4]                           : 49    : output : LVTTL             :      
+DR2[8]                           : 50    : output : LVTTL             :      
+TMS                              : 51    :        :                   :      
+TCK                              : 52    :        :                   :      
+R0[6]                            : 53    : output : LVTTL             :      
+GND                              : 54    :       
+VCC_INT                          : 55    :       
+R0[5]                            : 56    : output : LVTTL             :      
+NSTATUS                          : 57    :        :                   :      
+CONF_DONE                        : 58    :        :                   :      
+R0[4]                            : 59    : output : LVTTL             :      
+DR2[3]                           : 60    : output : LVTTL             :      
+VCC_IO                           : 61    : 3.3V  
+DR2[2]                           : 62    : output : LVTTL             :      
+AR[4]                            : 63    : output : LVTTL             :      
+BUS[6]                           : 64    : output : LVTTL             :      
+DR1[3]                           : 65    : output : LVTTL             :      
+LDR2                             : 66    : output : LVTTL             :      
+BUS[4]                           : 67    : output : LVTTL             :      
+IR[7]                            : 68    : output : LVTTL             :      
+R0[3]                            : 69    : output : LVTTL             :      
+AR[3]                            : 70    : output : LVTTL             :      
+AR[2]                            : 71    : output : LVTTL             :      
+GND_IO                           : 72    :       
+VCC_INT                          : 73    :       
+GND                              : 74    :       
+LDR1                             : 75    : output : LVTTL             :      
+LDR0                             : 76    : output : LVTTL             :      
+GND                              : 77    :       
+PC[2]                            : 78    : output : LVTTL             :      
+LDAR                             : 79    : output : LVTTL             :      
+PC[3]                            : 80    : output : LVTTL             :      
+GND*                             : 81    :        :                   :      
+GND_CKOUT2                       : 82    :       
+VCC_CKOUT2                       : 83    :       
+T1                               : 84    : output : LVTTL             :      
+VCC_CKLK2                        : 85    :       
+VCC_INT                          : 86    :       
+GND                              : 87    :       
+GND_CKLK2                        : 88    :       
+VCC_IO                           : 89    : 3.3V  
+TDI                              : 90    :        :                   :      
+nCE                              : 91    :        :                   :      
+IN[0]                            : 92    : input  : LVTTL             :      
+DCLK                             : 93    :        :                   :      
+DATA0                            : 94    :        :                   :      
+CLOCK                            : 95    : input  : LVTTL             :      
+GND+                             : 96    :        :                   :      
+T3                               : 97    : output : LVTTL             :      
+T2                               : 98    : output : LVTTL             :      
+GND_CKLK4                        : 99    :       
+VCC_CKLK4                        : 100   :       
+AD[3]                            : 101   : output : LVTTL             :      
+DR1[1]                           : 102   : output : LVTTL             :      
+AD[0]                            : 103   : output : LVTTL             :      
+CN                               : 104   : output : LVTTL             :      
+IN[5]                            : 105   : input  : LVTTL             :      
+GND_IO                           : 106   :       
+VCC_IO                           : 107   : 3.3V  
+VCC_INT                          : 108   :       
+GND*                             : 109   :        :                   :      
+AD[4]                            : 110   : output : LVTTL             :      
+DR2[1]                           : 111   : output : LVTTL             :      
+IR[4]                            : 112   : output : LVTTL             :      
+AD[2]                            : 113   : output : LVTTL             :      
+IN[4]                            : 114   : input  : LVTTL             :      
+AD[1]                            : 115   : output : LVTTL             :      
+VCC_IO                           : 116   : 3.3V  
+GND*                             : 117   :        :                   :      
+IN[6]                            : 118   : input  : LVTTL             :      
+IN[3]                            : 119   : input  : LVTTL             :      
+IR[5]                            : 120   : output : LVTTL             :      
+DR2[5]                           : 121   : output : LVTTL             :      
+IR[6]                            : 122   : output : LVTTL             :      
+TDO                              : 123   :        :                   :      
+R0[7]                            : 124   : output : LVTTL             :      
+VCC_INT                          : 125   :       
+GND                              : 126   :       
+R0[8]                            : 127   : output : LVTTL             :      
+nCEO                             : 128   :        :                   :      
+TRST                             : 129   :        :                   :      
+DR1[2]                           : 130   : output : LVTTL             :      
+nPC_BUS                          : 131   : output : LVTTL             :      
+BUS[8]                           : 132   : output : LVTTL             :      
+LDIR                             : 133   : output : LVTTL             :      
+GND_IO                           : 134   :       
+BUS[5]                           : 135   : output : LVTTL             :      
+DR2[6]                           : 136   : output : LVTTL             :      
+PC[4]                            : 137   : output : LVTTL             :      
+LOAD                             : 138   : output : LVTTL             :      
+DR2[7]                           : 139   : output : LVTTL             :      
+BUS[7]                           : 140   : output : LVTTL             :      
+PC[5]                            : 141   : output : LVTTL             :      
+PC[1]                            : 142   : output : LVTTL             :      
+BUS[2]                           : 143   : output : LVTTL             :      
+VCC_IO                           : 144   : 3.3V  

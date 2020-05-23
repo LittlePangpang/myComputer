@@ -1,0 +1,1822 @@
+--V1_87 is MyTime:TIME|74161:inst|f74161:sub|87 at LC8_10_D1
+--operation mode is normal
+
+V1_87_lut_out = V1L2 & V1L5;
+V1_87 = DFFE(V1_87_lut_out, GLOBAL(CLOCK), START, , );
+
+
+--V1_84 is MyTime:TIME|74161:inst|f74161:sub|84 at LC5_10_D1
+--operation mode is normal
+
+V1_84 = V1_9 & V1_87;
+
+
+--V1_99 is MyTime:TIME|74161:inst|f74161:sub|99 at LC6_10_D1
+--operation mode is normal
+
+V1_99_lut_out = V1_99 & !V1_87 & !V1_84 # !V1_99 & V1_84;
+V1_99 = DFFE(V1_99_lut_out, GLOBAL(CLOCK), START, , );
+
+
+--V1L2 is MyTime:TIME|74161:inst|f74161:sub|77~4 at LC7_10_D1
+--operation mode is normal
+
+V1L2 = !V1_87 # !V1_99;
+
+
+--V1_9 is MyTime:TIME|74161:inst|f74161:sub|9 at LC10_10_D1
+--operation mode is normal
+
+V1_9_lut_out = !V1_9 & V1L2;
+V1_9 = DFFE(V1_9_lut_out, GLOBAL(CLOCK), START, , );
+
+
+--V1L5 is MyTime:TIME|74161:inst|f74161:sub|90~1 at LC3_10_D1
+--operation mode is normal
+
+V1L5 = V1_9 $ V1_87;
+
+
+--U1L1 is MyTime:TIME|74138:inst1|16~7 at LC2_10_D1
+--operation mode is normal
+
+U1L1 = !V1_99 & !V1_87 & V1_9;
+
+
+--U1_17 is MyTime:TIME|74138:inst1|17 at LC1_10_D1
+--operation mode is normal
+
+U1_17 = !V1_99 & V1_87 & !V1_9;
+
+
+--U1_18 is MyTime:TIME|74138:inst1|18 at LC4_10_D1
+--operation mode is normal
+
+U1_18 = !V1_99 & V1_87 & V1_9;
+
+
+--U1L4 is MyTime:TIME|74138:inst1|19~7 at LC9_10_D1
+--operation mode is normal
+
+U1L4 = V1_99 & !V1_87 & !V1_9;
+
+
+--N1_q[0] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[0] at EC11_1_E1
+N1_q[0]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[0]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[0] = RAM_SLICE(, , , , , , , , , N1_q[0]_write_address, N1_q[0]_read_address);
+
+
+--F4_14 is 74273b:MYIR|14 at LC3_2_F2
+--operation mode is normal
+
+F4_14_lut_out = A1L74 & (K3_inst3 $ K4_inst2 # !F7_19);
+F4_14 = DFFE(F4_14_lut_out, GLOBAL(inst41), , , );
+
+
+--F5_14 is MyControl:Control|74273b:inst8|14 at LC3_1_E1
+--operation mode is normal
+
+F5_14_lut_out = N1_q[5];
+F5_14 = DFFE(F5_14_lut_out, GLOBAL(U1_17), , , );
+
+
+--D1_inst7 is MyControl:Control|inst7 at LC4_2_F2
+--operation mode is normal
+
+D1_inst7 = F5_14 & U1L4 & F4_14;
+
+
+--D1_inst4 is MyControl:Control|inst4 at LC3_10_E1
+--operation mode is normal
+
+D1_inst4_lut_out = !N1_q[0];
+D1_inst4 = DFFE(D1_inst4_lut_out, GLOBAL(U1_17), !D1_inst7, , );
+
+
+--N1_q[1] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[1] at EC14_1_C1
+N1_q[1]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[1]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[1] = RAM_SLICE(, , , , , , , , , N1_q[1]_write_address, N1_q[1]_read_address);
+
+
+--F4_13 is 74273b:MYIR|13 at LC8_2_F2
+--operation mode is normal
+
+F4_13_lut_out = A1L94;
+F4_13 = DFFE(F4_13_lut_out, GLOBAL(inst41), , , );
+
+
+--D1_inst6 is MyControl:Control|inst6 at LC5_2_F2
+--operation mode is normal
+
+D1_inst6 = F5_14 & U1L4 & F4_13;
+
+
+--D1_inst3 is MyControl:Control|inst3 at LC3_1_C1
+--operation mode is normal
+
+D1_inst3_lut_out = !N1_q[1];
+D1_inst3 = DFFE(D1_inst3_lut_out, GLOBAL(U1_17), !D1_inst6, , );
+
+
+--N1_q[2] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[2] at EC9_1_C1
+N1_q[2]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[2]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[2] = RAM_SLICE(, , , , , , , , , N1_q[2]_write_address, N1_q[2]_read_address);
+
+
+--F4_12 is 74273b:MYIR|12 at LC9_2_F2
+--operation mode is normal
+
+F4_12_lut_out = A1L35 & (K1L1 $ K2_inst2 # !F7_19);
+F4_12 = DFFE(F4_12_lut_out, GLOBAL(inst41), , , );
+
+
+--D1_inst5 is MyControl:Control|inst5 at LC2_2_F2
+--operation mode is normal
+
+D1_inst5 = F5_14 & U1L4 & F4_12;
+
+
+--D1_inst2 is MyControl:Control|inst2 at LC3_5_C1
+--operation mode is normal
+
+D1_inst2_lut_out = !N1_q[2];
+D1_inst2 = DFFE(D1_inst2_lut_out, GLOBAL(U1_17), !D1_inst5, , );
+
+
+--N1_q[3] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[3] at EC11_1_C1
+N1_q[3]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[3]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[3] = RAM_SLICE(, , , , , , , , , N1_q[3]_write_address, N1_q[3]_read_address);
+
+
+--D1_inst is MyControl:Control|inst at LC3_10_C1
+--operation mode is normal
+
+D1_inst_lut_out = N1_q[3];
+D1_inst = DFFE(D1_inst_lut_out, GLOBAL(U1_17), , , );
+
+
+--N1_q[4] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[4] at EC10_1_C1
+N1_q[4]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[4]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[4] = RAM_SLICE(, , , , , , , , , N1_q[4]_write_address, N1_q[4]_read_address);
+
+
+--D1_inst1 is MyControl:Control|inst1 at LC3_2_C1
+--operation mode is normal
+
+D1_inst1_lut_out = N1_q[4];
+D1_inst1 = DFFE(D1_inst1_lut_out, GLOBAL(U1_17), , , );
+
+
+--N1_q[7] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[7] at EC3_1_C1
+N1_q[7]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[7]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[7] = RAM_SLICE(, , , , , , , , , N1_q[7]_write_address, N1_q[7]_read_address);
+
+
+--F5_12 is MyControl:Control|74273b:inst8|12 at LC3_4_C2
+--operation mode is normal
+
+F5_12_lut_out = N1_q[7];
+F5_12 = DFFE(F5_12_lut_out, GLOBAL(U1_17), , , );
+
+
+--S1_111 is MyPC:MYPC|74163:PC1|f74163:sub|111 at LC2_4_E2
+--operation mode is normal
+
+S1_111_lut_out = !S1_128 & (S1L8 # S1_109 & !F6_18);
+S1_111 = DFFE(S1_111_lut_out, GLOBAL(U1_17), , , );
+
+
+--S1_106 is MyPC:MYPC|74163:PC1|f74163:sub|106 at LC10_3_E2
+--operation mode is normal
+
+S1_106 = S1_111 & S1_73;
+
+
+--N1_q[16] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[16] at EC7_1_C1
+N1_q[16]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[16]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[16] = RAM_SLICE(, , , , , , , , , N1_q[16]_write_address, N1_q[16]_read_address);
+
+
+--F6_19 is MyControl:Control|74273b:inst12|19 at LC3_2_C2
+--operation mode is normal
+
+F6_19_lut_out = N1_q[16];
+F6_19 = DFFE(F6_19_lut_out, GLOBAL(U1_17), , , );
+
+
+--F7_19 is MyControl:Control|74273b:inst13|19 at LC4_10_F2
+--operation mode is normal
+
+F7_19_lut_out = N1_q[8];
+F7_19 = DFFE(F7_19_lut_out, GLOBAL(U1_17), , , );
+
+
+--F6_16 is MyControl:Control|74273b:inst12|16 at LC3_9_C2
+--operation mode is normal
+
+F6_16_lut_out = N1_q[19];
+F6_16 = DFFE(F6_16_lut_out, GLOBAL(U1_17), , , );
+
+
+--F2_15 is 74273b:MYDR1|15 at LC2_5_F2
+--operation mode is normal
+
+F2_15_lut_out = H1_17 # !F6_15;
+F2_15 = DFFE(F2_15_lut_out, GLOBAL(inst24), , , );
+
+
+--F3_15 is 74273b:MYDR2|15 at LC5_5_F2
+--operation mode is normal
+
+F3_15_lut_out = H1_17 # !F6_15;
+F3_15 = DFFE(F3_15_lut_out, GLOBAL(inst25), , , );
+
+
+--F2_16 is 74273b:MYDR1|16 at LC3_3_F2
+--operation mode is normal
+
+F2_16_lut_out = H1_16 # !F6_15;
+F2_16 = DFFE(F2_16_lut_out, GLOBAL(inst24), , , );
+
+
+--F2_18 is 74273b:MYDR1|18 at LC9_8_F2
+--operation mode is normal
+
+F2_18_lut_out = H1_14 # !F6_15;
+F2_18 = DFFE(F2_18_lut_out, GLOBAL(inst24), , , );
+
+
+--F2_19 is 74273b:MYDR1|19 at LC10_9_F2
+--operation mode is normal
+
+F2_19_lut_out = H1_13 # !F6_15;
+F2_19 = DFFE(F2_19_lut_out, GLOBAL(inst24), , , );
+
+
+--F3_19 is 74273b:MYDR2|19 at LC2_9_F2
+--operation mode is normal
+
+F3_19_lut_out = H1_13 # !F6_15;
+F3_19 = DFFE(F3_19_lut_out, GLOBAL(inst25), , , );
+
+
+--K8_inst2 is MyALU:ALU|MyFA:inst7|inst2 at LC8_9_F2
+--operation mode is normal
+
+K8_inst2 = F2_19 & (F6_16 # F3_19) # !F2_19 & F6_16 & !F3_19;
+
+
+--F3_18 is 74273b:MYDR2|18 at LC10_8_F2
+--operation mode is normal
+
+F3_18_lut_out = H1_14 # !F6_15;
+F3_18 = DFFE(F3_18_lut_out, GLOBAL(inst25), , , );
+
+
+--B1_inst14 is MyALU:ALU|inst14 at LC1_8_F2
+--operation mode is normal
+
+B1_inst14 = F6_16 $ F3_18;
+
+
+--F2_17 is 74273b:MYDR1|17 at LC10_7_F2
+--operation mode is normal
+
+F2_17_lut_out = H1_15 # !F6_15;
+F2_17 = DFFE(F2_17_lut_out, GLOBAL(inst24), , , );
+
+
+--F3_17 is 74273b:MYDR2|17 at LC6_7_F2
+--operation mode is normal
+
+F3_17_lut_out = H1_15 # !F6_15;
+F3_17 = DFFE(F3_17_lut_out, GLOBAL(inst25), , , );
+
+
+--K6_inst3 is MyALU:ALU|MyFA:inst5|inst3 at LC5_7_F2
+--operation mode is normal
+
+K6_inst3 = F6_16 $ F3_17 $ F2_17;
+
+
+--K6_inst is MyALU:ALU|MyFA:inst5|inst at LC3_7_F2
+--operation mode is normal
+
+K6_inst = K6_inst3 & (B1_inst14 & (F2_18 # K8_inst2) # !B1_inst14 & F2_18 & K8_inst2);
+
+
+--K6_inst4 is MyALU:ALU|MyFA:inst5|inst4 at LC2_7_F2
+--operation mode is normal
+
+K6_inst4 = F2_17 & (F3_17 $ F6_16);
+
+
+--F3_16 is 74273b:MYDR2|16 at LC5_3_F2
+--operation mode is normal
+
+F3_16_lut_out = H1_16 # !F6_15;
+F3_16 = DFFE(F3_16_lut_out, GLOBAL(inst25), , , );
+
+
+--B1_inst12 is MyALU:ALU|inst12 at LC4_7_F2
+--operation mode is normal
+
+B1_inst12 = F6_16 $ F3_16;
+
+
+--K5_inst2 is MyALU:ALU|MyFA:inst4|inst2 at LC1_7_F2
+--operation mode is normal
+
+K5_inst2 = F2_16 & (B1_inst12 # K6_inst4 # K6_inst) # !F2_16 & B1_inst12 & (K6_inst4 # K6_inst);
+
+
+--K4_inst2 is MyALU:ALU|MyFA:inst3|inst2 at LC9_5_F2
+--operation mode is normal
+
+K4_inst2 = F2_15 & (K5_inst2 # F6_16 $ F3_15) # !F2_15 & K5_inst2 & (F6_16 $ F3_15);
+
+
+--F2_14 is 74273b:MYDR1|14 at LC3_8_D2
+--operation mode is normal
+
+F2_14_lut_out = H1_18 # !F6_15;
+F2_14 = DFFE(F2_14_lut_out, GLOBAL(inst24), , , );
+
+
+--F3_14 is 74273b:MYDR2|14 at LC5_8_D2
+--operation mode is normal
+
+F3_14_lut_out = H1_18 # !F6_15;
+F3_14 = DFFE(F3_14_lut_out, GLOBAL(inst25), , , );
+
+
+--K3_inst3 is MyALU:ALU|MyFA:inst2|inst3 at LC4_6_F2
+--operation mode is normal
+
+K3_inst3 = F6_16 $ F2_14 $ F3_14;
+
+
+--A1L54 is D[6]~145 at LC6_5_F2
+--operation mode is normal
+
+A1L54 = A1L74 & (K3_inst3 $ K4_inst2 # !F7_19);
+
+
+--F7_12 is MyControl:Control|74273b:inst13|12 at LC3_3_E1
+--operation mode is normal
+
+F7_12_lut_out = N1_q[15];
+F7_12 = DFFE(F7_12_lut_out, GLOBAL(U1_17), , , );
+
+
+--F1_19 is 74273b:MYAR|19 at LC6_10_F2
+--operation mode is normal
+
+F1_19_lut_out = A1L13;
+F1_19 = DFFE(F1_19_lut_out, inst34, , , );
+
+
+--F1_18 is 74273b:MYAR|18 at LC2_10_F2
+--operation mode is normal
+
+F1_18_lut_out = A1L53;
+F1_18 = DFFE(F1_18_lut_out, inst34, , , );
+
+
+--F1_17 is 74273b:MYAR|17 at LC3_10_F2
+--operation mode is normal
+
+F1_17_lut_out = A1L83 & (K6_inst3 $ K7_inst2 # !F7_19);
+F1_17 = DFFE(F1_17_lut_out, inst34, , , );
+
+
+--F1_16 is 74273b:MYAR|16 at LC5_10_F2
+--operation mode is normal
+
+F1_16_lut_out = A1L04;
+F1_16 = DFFE(F1_16_lut_out, inst34, , , );
+
+
+--F1_15 is 74273b:MYAR|15 at LC10_10_F2
+--operation mode is normal
+
+F1_15_lut_out = A1L44 & (K4_inst3 $ K5_inst2 # !F7_19);
+F1_15 = DFFE(F1_15_lut_out, inst34, , , );
+
+
+--F1_14 is 74273b:MYAR|14 at LC9_10_F2
+--operation mode is normal
+
+F1_14_lut_out = A1L74 & (K3_inst3 $ K4_inst2 # !F7_19);
+F1_14 = DFFE(F1_14_lut_out, inst34, , , );
+
+
+--F1_13 is 74273b:MYAR|13 at LC8_10_F2
+--operation mode is normal
+
+F1_13_lut_out = A1L94;
+F1_13 = DFFE(F1_13_lut_out, inst34, , , );
+
+
+--F1_12 is 74273b:MYAR|12 at LC1_10_F2
+--operation mode is normal
+
+F1_12_lut_out = A1L35 & (K1L1 $ K2_inst2 # !F7_19);
+F1_12 = DFFE(F1_12_lut_out, inst34, , , );
+
+
+--Q1_q[5] is lpm_ram_dq0:inst31|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[5] at EC4_1_F2
+Q1_q[5]_data_in = A1L54;
+Q1_q[5]_write_enable = F7_12;
+Q1_q[5]_clock_0 = GLOBAL(CLOCK);
+Q1_q[5]_clock_1 = GLOBAL(CLOCK);
+Q1_q[5]_write_address = WR_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[5]_read_address = RD_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[5] = RAM_SLICE(Q1_q[5]_data_in, Q1_q[5]_write_enable, Q1_q[5]_clock_0, Q1_q[5]_clock_1, , , , , , Q1_q[5]_write_address, Q1_q[5]_read_address);
+
+
+--N1_q[6] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[6] at EC13_1_C1
+N1_q[6]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[6]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[6] = RAM_SLICE(, , , , , , , , , N1_q[6]_write_address, N1_q[6]_read_address);
+
+
+--F5_13 is MyControl:Control|74273b:inst8|13 at LC3_7_C2
+--operation mode is normal
+
+F5_13_lut_out = N1_q[6];
+F5_13 = DFFE(F5_13_lut_out, GLOBAL(U1_17), , , );
+
+
+--N1_q[8] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[8] at EC5_1_C1
+N1_q[8]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[8]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[8] = RAM_SLICE(, , , , , , , , , N1_q[8]_write_address, N1_q[8]_read_address);
+
+
+--N1_q[19] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[19] at EC12_1_C1
+N1_q[19]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[19]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[19] = RAM_SLICE(, , , , , , , , , N1_q[19]_write_address, N1_q[19]_read_address);
+
+
+--H1_13 is 74374b:MYR0|13 at LC7_4_F2
+--operation mode is normal
+
+H1_13_lut_out = A1L13;
+H1_13 = DFFE(H1_13_lut_out, inst20, , , );
+
+
+--F6_15 is MyControl:Control|74273b:inst12|15 at LC3_8_E2
+--operation mode is normal
+
+F6_15_lut_out = N1_q[20];
+F6_15 = DFFE(F6_15_lut_out, GLOBAL(U1_17), , , );
+
+
+--F7_14 is MyControl:Control|74273b:inst13|14 at LC7_7_E1
+--operation mode is normal
+
+F7_14_lut_out = N1_q[13];
+F7_14 = DFFE(F7_14_lut_out, GLOBAL(U1_17), , , );
+
+
+--inst24 is inst24 at LC9_7_E1
+--operation mode is normal
+
+inst24 = !V1_99 & !V1_9 & V1_87 & F7_14;
+
+
+--F7_15 is MyControl:Control|74273b:inst13|15 at LC3_1_F2
+--operation mode is normal
+
+F7_15_lut_out = N1_q[12];
+F7_15 = DFFE(F7_15_lut_out, GLOBAL(U1_17), , , );
+
+
+--inst25 is inst25 at LC5_1_F2
+--operation mode is normal
+
+inst25 = !V1_99 & !V1_9 & V1_87 & F7_15;
+
+
+--H1_14 is 74374b:MYR0|14 at LC10_4_F2
+--operation mode is normal
+
+H1_14_lut_out = A1L53;
+H1_14 = DFFE(H1_14_lut_out, inst20, , , );
+
+
+--H1_15 is 74374b:MYR0|15 at LC10_2_F2
+--operation mode is normal
+
+H1_15_lut_out = A1L83 & (K6_inst3 $ K7_inst2 # !F7_19);
+H1_15 = DFFE(H1_15_lut_out, inst20, , , );
+
+
+--H1_16 is 74374b:MYR0|16 at LC8_4_F2
+--operation mode is normal
+
+H1_16_lut_out = A1L04;
+H1_16 = DFFE(H1_16_lut_out, inst20, , , );
+
+
+--H1_17 is 74374b:MYR0|17 at LC3_4_F2
+--operation mode is normal
+
+H1_17_lut_out = A1L44 & (K4_inst3 $ K5_inst2 # !F7_19);
+H1_17 = DFFE(H1_17_lut_out, inst20, , , );
+
+
+--H1_18 is 74374b:MYR0|18 at LC6_2_F2
+--operation mode is normal
+
+H1_18_lut_out = A1L74 & (K3_inst3 $ K4_inst2 # !F7_19);
+H1_18 = DFFE(H1_18_lut_out, inst20, , , );
+
+
+--N1_q[11] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[11] at EC6_1_C1
+N1_q[11]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[11]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[11] = RAM_SLICE(, , , , , , , , , N1_q[11]_write_address, N1_q[11]_read_address);
+
+
+--F7_16 is MyControl:Control|74273b:inst13|16 at LC3_8_A2
+--operation mode is normal
+
+F7_16_lut_out = N1_q[11];
+F7_16 = DFFE(F7_16_lut_out, GLOBAL(U1_17), , , );
+
+
+--inst41 is inst41 at LC5_8_A2
+--operation mode is normal
+
+inst41 = !V1_99 & V1_9 & V1_87 & F7_16;
+
+
+--N1_q[5] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[5] at EC14_1_E1
+N1_q[5]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[5]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[5] = RAM_SLICE(, , , , , , , , , N1_q[5]_write_address, N1_q[5]_read_address);
+
+
+--S1_122 is MyPC:MYPC|74163:PC1|f74163:sub|122 at LC8_3_E2
+--operation mode is normal
+
+S1_122_lut_out = !S1_128 & (S1L21 # !F6_18 & S1_120);
+S1_122 = DFFE(S1_122_lut_out, GLOBAL(U1_17), , , );
+
+
+--S1_117 is MyPC:MYPC|74163:PC1|f74163:sub|117 at LC1_3_E2
+--operation mode is normal
+
+S1_117 = S1_122 & S1_106;
+
+
+--Q1_q[6] is lpm_ram_dq0:inst31|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[6] at EC8_1_F2
+Q1_q[6]_data_in = A1L94;
+Q1_q[6]_write_enable = F7_12;
+Q1_q[6]_clock_0 = GLOBAL(CLOCK);
+Q1_q[6]_clock_1 = GLOBAL(CLOCK);
+Q1_q[6]_write_address = WR_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[6]_read_address = RD_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[6] = RAM_SLICE(Q1_q[6]_data_in, Q1_q[6]_write_enable, Q1_q[6]_clock_0, Q1_q[6]_clock_1, , , , , , Q1_q[6]_write_address, Q1_q[6]_read_address);
+
+
+--H1_19 is 74374b:MYR0|19 at LC5_9_E2
+--operation mode is normal
+
+H1_19_lut_out = A1L94;
+H1_19 = DFFE(H1_19_lut_out, inst20, , , );
+
+
+--F3_13 is 74273b:MYDR2|13 at LC3_7_E2
+--operation mode is normal
+
+F3_13_lut_out = H1_19 # !F6_15;
+F3_13 = DFFE(F3_13_lut_out, GLOBAL(inst25), , , );
+
+
+--F2_13 is 74273b:MYDR1|13 at LC3_9_E2
+--operation mode is normal
+
+F2_13_lut_out = H1_19 # !F6_15;
+F2_13 = DFFE(F2_13_lut_out, GLOBAL(inst24), , , );
+
+
+--S1_134 is MyPC:MYPC|74163:PC1|f74163:sub|134 at LC9_3_E2
+--operation mode is normal
+
+S1_134_lut_out = !S1_128 & (S1L61 # !F6_18 & S1_131);
+S1_134 = DFFE(S1_134_lut_out, GLOBAL(U1_17), , , );
+
+
+--S1_128 is MyPC:MYPC|74163:PC1|f74163:sub|128 at LC4_3_E2
+--operation mode is normal
+
+S1_128 = S1_134 & S1_117;
+
+
+--F2_12 is 74273b:MYDR1|12 at LC7_8_F2
+--operation mode is normal
+
+F2_12_lut_out = H1_20 # !F6_15;
+F2_12 = DFFE(F2_12_lut_out, GLOBAL(inst24), , , );
+
+
+--F3_12 is 74273b:MYDR2|12 at LC6_8_F2
+--operation mode is normal
+
+F3_12_lut_out = H1_20 # !F6_15;
+F3_12 = DFFE(F3_12_lut_out, GLOBAL(inst25), , , );
+
+
+--K1L1 is MyALU:ALU|MyFA:inst|inst5~7 at LC8_8_F2
+--operation mode is normal
+
+K1L1 = F6_16 $ F2_12 $ F3_12;
+
+
+--B1_inst11 is MyALU:ALU|inst11 at LC3_5_F2
+--operation mode is normal
+
+B1_inst11 = F6_16 $ F3_15;
+
+
+--K3_inst is MyALU:ALU|MyFA:inst2|inst at LC3_6_F2
+--operation mode is normal
+
+K3_inst = K3_inst3 & (F2_15 & (B1_inst11 # K5_inst2) # !F2_15 & B1_inst11 & K5_inst2);
+
+
+--K3_inst4 is MyALU:ALU|MyFA:inst2|inst4 at LC9_6_F2
+--operation mode is normal
+
+K3_inst4 = F2_14 & (F6_16 $ F3_14);
+
+
+--B1_inst9 is MyALU:ALU|inst9 at LC10_6_F2
+--operation mode is normal
+
+B1_inst9 = F6_16 $ F3_13;
+
+
+--K2_inst2 is MyALU:ALU|MyFA:inst1|inst2 at LC8_6_F2
+--operation mode is normal
+
+K2_inst2 = F2_13 & (K3_inst4 # B1_inst9 # K3_inst) # !F2_13 & B1_inst9 & (K3_inst4 # K3_inst);
+
+
+--A1L15 is D[8]~159 at LC2_6_F2
+--operation mode is normal
+
+A1L15 = A1L35 & (K1L1 $ K2_inst2 # !F7_19);
+
+
+--Q1_q[7] is lpm_ram_dq0:inst31|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[7] at EC7_1_F2
+Q1_q[7]_data_in = A1L15;
+Q1_q[7]_write_enable = F7_12;
+Q1_q[7]_clock_0 = GLOBAL(CLOCK);
+Q1_q[7]_clock_1 = GLOBAL(CLOCK);
+Q1_q[7]_write_address = WR_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[7]_read_address = RD_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[7] = RAM_SLICE(Q1_q[7]_data_in, Q1_q[7]_write_enable, Q1_q[7]_clock_0, Q1_q[7]_clock_1, , , , , , Q1_q[7]_write_address, Q1_q[7]_read_address);
+
+
+--H1_20 is 74374b:MYR0|20 at LC1_2_F2
+--operation mode is normal
+
+H1_20_lut_out = A1L35 & (K1L1 $ K2_inst2 # !F7_19);
+H1_20 = DFFE(H1_20_lut_out, inst20, , , );
+
+
+--N1_q[9] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[9] at EC6_1_E1
+N1_q[9]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[9]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[9] = RAM_SLICE(, , , , , , , , , N1_q[9]_write_address, N1_q[9]_read_address);
+
+
+--F7_18 is MyControl:Control|74273b:inst13|18 at LC3_7_E1
+--operation mode is normal
+
+F7_18_lut_out = N1_q[9];
+F7_18 = DFFE(F7_18_lut_out, GLOBAL(U1_17), , , );
+
+
+--F6_18 is MyControl:Control|74273b:inst12|18 at LC3_2_E2
+--operation mode is normal
+
+F6_18_lut_out = N1_q[17];
+F6_18 = DFFE(F6_18_lut_out, GLOBAL(U1_17), , , );
+
+
+--S2_72 is MyPC:MYPC|74163:PC2|f74163:sub|72 at LC3_6_E2
+--operation mode is normal
+
+S2_72 = S2_34 $ (F7_17 & F7_17);
+
+
+--S2_34 is MyPC:MYPC|74163:PC2|f74163:sub|34 at LC7_6_E2
+--operation mode is normal
+
+S2_34_lut_out = !S1_128 & (S2L2 # S2_72 & !F6_18);
+S2_34 = DFFE(S2_34_lut_out, GLOBAL(U1_17), , , );
+
+
+--F7_17 is MyControl:Control|74273b:inst13|17 at LC2_6_E2
+--operation mode is normal
+
+F7_17_lut_out = N1_q[10];
+F7_17 = DFFE(F7_17_lut_out, GLOBAL(U1_17), , , );
+
+
+--S2_73 is MyPC:MYPC|74163:PC2|f74163:sub|73 at LC4_6_E2
+--operation mode is normal
+
+S2_73 = F7_17 & S2_34;
+
+
+--F7_13 is MyControl:Control|74273b:inst13|13 at LC10_7_E1
+--operation mode is normal
+
+F7_13_lut_out = N1_q[14];
+F7_13 = DFFE(F7_13_lut_out, GLOBAL(U1_17), , , );
+
+
+--inst20 is inst20 at LC6_7_E1
+--operation mode is normal
+
+inst20 = !V1_99 & !V1_9 & V1_87 & F7_13;
+
+
+--N1_q[20] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[20] at EC9_1_E1
+N1_q[20]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[20]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[20] = RAM_SLICE(, , , , , , , , , N1_q[20]_write_address, N1_q[20]_read_address);
+
+
+--N1_q[13] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[13] at EC7_1_E1
+N1_q[13]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[13]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[13] = RAM_SLICE(, , , , , , , , , N1_q[13]_write_address, N1_q[13]_read_address);
+
+
+--N1_q[12] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[12] at EC3_1_E1
+N1_q[12]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[12]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[12] = RAM_SLICE(, , , , , , , , , N1_q[12]_write_address, N1_q[12]_read_address);
+
+
+--N1_q[15] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[15] at EC12_1_E1
+N1_q[15]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[15]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[15] = RAM_SLICE(, , , , , , , , , N1_q[15]_write_address, N1_q[15]_read_address);
+
+
+--Q1_q[0] is lpm_ram_dq0:inst31|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[0] at EC2_1_F2
+Q1_q[0]_data_in = A1L13;
+Q1_q[0]_write_enable = F7_12;
+Q1_q[0]_clock_0 = GLOBAL(CLOCK);
+Q1_q[0]_clock_1 = GLOBAL(CLOCK);
+Q1_q[0]_write_address = WR_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[0]_read_address = RD_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[0] = RAM_SLICE(Q1_q[0]_data_in, Q1_q[0]_write_enable, Q1_q[0]_clock_0, Q1_q[0]_clock_1, , , , , , Q1_q[0]_write_address, Q1_q[0]_read_address);
+
+
+--inst34 is inst34 at LC5_7_E1
+--operation mode is normal
+
+inst34 = !V1_99 & !V1_9 & V1_87 & F7_18;
+
+
+--S2_111 is MyPC:MYPC|74163:PC2|f74163:sub|111 at LC9_6_E2
+--operation mode is normal
+
+S2_111_lut_out = !S1_128 & (S2L8 # !F6_18 & S2_109);
+S2_111 = DFFE(S2_111_lut_out, GLOBAL(U1_17), , , );
+
+
+--S2_106 is MyPC:MYPC|74163:PC2|f74163:sub|106 at LC8_6_E2
+--operation mode is normal
+
+S2_106 = S2_111 & S2_73;
+
+
+--Q1_q[1] is lpm_ram_dq0:inst31|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[1] at EC5_1_F2
+Q1_q[1]_data_in = A1L53;
+Q1_q[1]_write_enable = F7_12;
+Q1_q[1]_clock_0 = GLOBAL(CLOCK);
+Q1_q[1]_clock_1 = GLOBAL(CLOCK);
+Q1_q[1]_write_address = WR_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[1]_read_address = RD_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[1] = RAM_SLICE(Q1_q[1]_data_in, Q1_q[1]_write_enable, Q1_q[1]_clock_0, Q1_q[1]_clock_1, , , , , , Q1_q[1]_write_address, Q1_q[1]_read_address);
+
+
+--S2_122 is MyPC:MYPC|74163:PC2|f74163:sub|122 at LC6_5_E2
+--operation mode is normal
+
+S2_122_lut_out = !S1_128 & (S2L21 # !F6_18 & S2_120);
+S2_122 = DFFE(S2_122_lut_out, GLOBAL(U1_17), , , );
+
+
+--S2_117 is MyPC:MYPC|74163:PC2|f74163:sub|117 at LC10_5_E2
+--operation mode is normal
+
+S2_117 = S2_122 & S2_106;
+
+
+--K7_inst2 is MyALU:ALU|MyFA:inst6|inst2 at LC4_8_F2
+--operation mode is normal
+
+K7_inst2 = F2_18 & (K8_inst2 # F6_16 $ F3_18) # !F2_18 & K8_inst2 & (F6_16 $ F3_18);
+
+
+--A1L63 is D[3]~124 at LC7_10_F2
+--operation mode is normal
+
+A1L63 = A1L83 & (K6_inst3 $ K7_inst2 # !F7_19);
+
+
+--Q1_q[2] is lpm_ram_dq0:inst31|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[2] at EC3_1_F2
+Q1_q[2]_data_in = A1L63;
+Q1_q[2]_write_enable = F7_12;
+Q1_q[2]_clock_0 = GLOBAL(CLOCK);
+Q1_q[2]_clock_1 = GLOBAL(CLOCK);
+Q1_q[2]_write_address = WR_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[2]_read_address = RD_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[2] = RAM_SLICE(Q1_q[2]_data_in, Q1_q[2]_write_enable, Q1_q[2]_clock_0, Q1_q[2]_clock_1, , , , , , Q1_q[2]_write_address, Q1_q[2]_read_address);
+
+
+--S2_134 is MyPC:MYPC|74163:PC2|f74163:sub|134 at LC7_5_E2
+--operation mode is normal
+
+S2_134_lut_out = !S1_128 & (S2L61 # !F6_18 & S2_131);
+S2_134 = DFFE(S2_134_lut_out, GLOBAL(U1_17), , , );
+
+
+--S2_128 is MyPC:MYPC|74163:PC2|f74163:sub|128 at LC8_5_E2
+--operation mode is normal
+
+S2_128 = S2_134 & S2_117;
+
+
+--Q1_q[3] is lpm_ram_dq0:inst31|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[3] at EC1_1_F2
+Q1_q[3]_data_in = A1L04;
+Q1_q[3]_write_enable = F7_12;
+Q1_q[3]_clock_0 = GLOBAL(CLOCK);
+Q1_q[3]_clock_1 = GLOBAL(CLOCK);
+Q1_q[3]_write_address = WR_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[3]_read_address = RD_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[3] = RAM_SLICE(Q1_q[3]_data_in, Q1_q[3]_write_enable, Q1_q[3]_clock_0, Q1_q[3]_clock_1, , , , , , Q1_q[3]_write_address, Q1_q[3]_read_address);
+
+
+--S1L81 is MyPC:MYPC|74163:PC1|f74163:sub|140~0 at LC7_4_E2
+--operation mode is arithmetic
+
+S1L81 = S1_34;
+
+--S1_140 is MyPC:MYPC|74163:PC1|f74163:sub|140 at LC7_4_E2
+--operation mode is arithmetic
+
+S1_140 = CARRY(S2_128);
+
+
+--K4_inst3 is MyALU:ALU|MyFA:inst3|inst3 at LC10_5_F2
+--operation mode is normal
+
+K4_inst3 = F2_15 $ F6_16 $ F3_15;
+
+
+--A1L24 is D[5]~138 at LC4_5_F2
+--operation mode is normal
+
+A1L24 = A1L44 & (K4_inst3 $ K5_inst2 # !F7_19);
+
+
+--Q1_q[4] is lpm_ram_dq0:inst31|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[4] at EC6_1_F2
+Q1_q[4]_data_in = A1L24;
+Q1_q[4]_write_enable = F7_12;
+Q1_q[4]_clock_0 = GLOBAL(CLOCK);
+Q1_q[4]_clock_1 = GLOBAL(CLOCK);
+Q1_q[4]_write_address = WR_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[4]_read_address = RD_ADDR(F1_19, F1_18, F1_17, F1_16, F1_15, F1_14, F1_13, F1_12);
+Q1_q[4] = RAM_SLICE(Q1_q[4]_data_in, Q1_q[4]_write_enable, Q1_q[4]_clock_0, Q1_q[4]_clock_1, , , , , , Q1_q[4]_write_address, Q1_q[4]_read_address);
+
+
+--N1_q[14] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[14] at EC10_1_E1
+N1_q[14]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[14]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[14] = RAM_SLICE(, , , , , , , , , N1_q[14]_write_address, N1_q[14]_read_address);
+
+
+--N1_q[17] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[17] at EC5_1_E1
+N1_q[17]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[17]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[17] = RAM_SLICE(, , , , , , , , , N1_q[17]_write_address, N1_q[17]_read_address);
+
+
+--N1_q[10] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[10] at EC15_1_E1
+N1_q[10]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[10]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[10] = RAM_SLICE(, , , , , , , , , N1_q[10]_write_address, N1_q[10]_read_address);
+
+
+--S1_131 is MyPC:MYPC|74163:PC1|f74163:sub|131 at LC6_3_E2
+--operation mode is normal
+
+S1_131 = S1_134 $ (S1L02 & S1_117);
+
+
+--S2L2 is MyPC:MYPC|74163:PC2|f74163:sub|68~5 at LC5_6_E2
+--operation mode is normal
+
+S2L2 = F6_18 & A1L13;
+
+
+--S2_109 is MyPC:MYPC|74163:PC2|f74163:sub|109 at LC6_6_E2
+--operation mode is normal
+
+S2_109 = S2_111 $ (F7_17 & S2_73);
+
+
+--S2_120 is MyPC:MYPC|74163:PC2|f74163:sub|120 at LC4_5_E2
+--operation mode is normal
+
+S2_120 = S2_122 $ (F7_17 & S2_106);
+
+
+--S2_131 is MyPC:MYPC|74163:PC2|f74163:sub|131 at LC1_5_E2
+--operation mode is normal
+
+S2_131 = S2_134 $ (F7_17 & S2_117);
+
+
+--S1_34 is MyPC:MYPC|74163:PC1|f74163:sub|34 at LC3_4_E2
+--operation mode is normal
+
+S1_34_lut_out = !S1_128 & (S1L2 # S1_72 & !F6_18);
+S1_34 = DFFE(S1_34_lut_out, GLOBAL(U1_17), , , );
+
+
+--S1_73 is MyPC:MYPC|74163:PC1|f74163:sub|73 at LC9_4_E2
+--operation mode is normal
+
+S1_73 = !S1L91 & S1L81;
+
+
+--S1_109 is MyPC:MYPC|74163:PC1|f74163:sub|109 at LC5_4_E2
+--operation mode is normal
+
+S1_109 = S1_111 $ (S1_73 & S1L02);
+
+
+--S1_120 is MyPC:MYPC|74163:PC1|f74163:sub|120 at LC5_3_E2
+--operation mode is normal
+
+S1_120 = S1_122 $ (S1_106 & S1L02);
+
+
+--F4_19 is 74273b:MYIR|19 at LC2_4_F2
+--operation mode is normal
+
+F4_19_lut_out = A1L13;
+F4_19 = DFFE(F4_19_lut_out, GLOBAL(inst41), , , );
+
+
+--S2L8 is MyPC:MYPC|74163:PC2|f74163:sub|115~5 at LC1_6_E2
+--operation mode is normal
+
+S2L8 = F6_18 & A1L53;
+
+
+--F4_18 is 74273b:MYIR|18 at LC6_4_F2
+--operation mode is normal
+
+F4_18_lut_out = A1L53;
+F4_18 = DFFE(F4_18_lut_out, GLOBAL(inst41), , , );
+
+
+--K6_inst5 is MyALU:ALU|MyFA:inst5|inst5 at LC9_5_E2
+--operation mode is normal
+
+K6_inst5 = K6_inst3 $ (F2_18 & (K8_inst2 # B1_inst14) # !F2_18 & K8_inst2 & B1_inst14);
+
+
+--S2L21 is MyPC:MYPC|74163:PC2|f74163:sub|126~5 at LC5_5_E2
+--operation mode is normal
+
+S2L21 = A1L83 & F6_18 & (K6_inst5 # !F7_19);
+
+
+--F4_17 is 74273b:MYIR|17 at LC7_2_F2
+--operation mode is normal
+
+F4_17_lut_out = A1L83 & (K6_inst3 $ K7_inst2 # !F7_19);
+F4_17 = DFFE(F4_17_lut_out, GLOBAL(inst41), , , );
+
+
+--S2L61 is MyPC:MYPC|74163:PC2|f74163:sub|137~5 at LC9_4_F2
+--operation mode is normal
+
+S2L61 = F6_18 & A1L04;
+
+
+--F4_16 is 74273b:MYIR|16 at LC4_4_F2
+--operation mode is normal
+
+F4_16_lut_out = A1L04;
+F4_16 = DFFE(F4_16_lut_out, GLOBAL(inst41), , , );
+
+
+--S1L2 is MyPC:MYPC|74163:PC1|f74163:sub|68~5 at LC1_4_E2
+--operation mode is normal
+
+S1L2 = F6_18 & A1L24;
+
+
+--S1_72 is MyPC:MYPC|74163:PC1|f74163:sub|72 at LC6_4_E2
+--operation mode is normal
+
+S1_72 = S1L02 $ S1L81;
+
+
+--F4_15 is 74273b:MYIR|15 at LC5_4_F2
+--operation mode is normal
+
+F4_15_lut_out = A1L44 & (K4_inst3 $ K5_inst2 # !F7_19);
+F4_15 = DFFE(F4_15_lut_out, GLOBAL(inst41), , , );
+
+
+--K3_inst5 is MyALU:ALU|MyFA:inst2|inst5 at LC4_4_E2
+--operation mode is normal
+
+K3_inst5 = K3_inst3 $ (F2_15 & (B1_inst11 # K5_inst2) # !F2_15 & B1_inst11 & K5_inst2);
+
+
+--S1L8 is MyPC:MYPC|74163:PC1|f74163:sub|115~5 at LC10_4_E2
+--operation mode is normal
+
+S1L8 = A1L74 & F6_18 & (K3_inst5 # !F7_19);
+
+
+--S1L21 is MyPC:MYPC|74163:PC1|f74163:sub|126~5 at LC5_2_E2
+--operation mode is normal
+
+S1L21 = F6_18 & A1L94;
+
+
+--S1L61 is MyPC:MYPC|74163:PC1|f74163:sub|137~5 at LC7_3_E2
+--operation mode is normal
+
+S1L61 = F6_18 & A1L15;
+
+
+--N1_q[18] is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[18] at EC13_1_E1
+N1_q[18]_write_address = WR_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[18]_read_address = RD_ADDR(N1L5, N1L6, N1L7, D1_inst, D1_inst1);
+N1_q[18] = RAM_SLICE(, , , , , , , , , N1_q[18]_write_address, N1_q[18]_read_address);
+
+
+--F6_17 is MyControl:Control|74273b:inst12|17 at LC3_5_A1
+--operation mode is normal
+
+F6_17_lut_out = N1_q[18];
+F6_17 = DFFE(F6_17_lut_out, GLOBAL(U1_17), , , );
+
+
+--A1L03 is D[1]~316 at LC9_9_F2
+--operation mode is normal
+
+A1L03 = F6_19 # F7_19 # F5_12 # F5_13;
+
+
+--A1L64 is D[6]~287 at LC7_5_F2
+--operation mode is normal
+
+A1L64 = F5_12 & S1_111 & (Q1_q[5] # !F6_19) # !F5_12 & (Q1_q[5] # !F6_19);
+
+
+--A1L84 is D[7]~297 at LC5_6_F2
+--operation mode is normal
+
+A1L84 = F6_19 & Q1_q[6] & (S1_122 # !F5_12) # !F6_19 & (S1_122 # !F5_12);
+
+
+--A1L25 is D[8]~307 at LC2_3_E2
+--operation mode is normal
+
+A1L25 = S1_134 & (Q1_q[7] # !F6_19) # !S1_134 & !F5_12 & (Q1_q[7] # !F6_19);
+
+
+--A1L92 is D[1]~4 at LC3_9_F2
+--operation mode is normal
+
+A1L92 = IN[0] # !F5_13;
+
+
+--A1L33 is D[2]~11 at LC2_8_F2
+--operation mode is normal
+
+A1L33 = IN[1] # !F5_13;
+
+
+--A1L73 is D[3]~257 at LC2_5_E2
+--operation mode is normal
+
+A1L73 = Q1_q[2] & (S2_122 # !F5_12) # !Q1_q[2] & !F6_19 & (S2_122 # !F5_12);
+
+
+--A1L93 is D[4]~267 at LC7_7_F2
+--operation mode is normal
+
+A1L93 = F5_12 & S2_134 & (Q1_q[3] # !F6_19) # !F5_12 & (Q1_q[3] # !F6_19);
+
+
+--A1L34 is D[5]~277 at LC6_9_F2
+--operation mode is normal
+
+A1L34 = F6_19 & Q1_q[4] & (S1L81 # !F5_12) # !F6_19 & (S1L81 # !F5_12);
+
+
+--A1L74 is D[6]~368 at LC8_5_F2
+--operation mode is normal
+
+A1L74 = (IN[5] # !F5_13) & CASCADE(A1L64);
+
+
+--A1L05 is D[7]~365 at LC6_6_F2
+--operation mode is normal
+
+A1L05 = (IN[6] # !F5_13) & CASCADE(A1L84);
+
+
+--K2_inst3 is MyALU:ALU|MyFA:inst1|inst3 at LC1_6_F2
+--operation mode is normal
+
+K2_inst3 = F6_16 $ F2_13 $ F3_13;
+
+
+--A1L94 is D[7]~361 at LC7_6_F2
+--operation mode is normal
+
+A1L94 = (K2_inst3 $ (K3_inst4 # K3_inst) # !F7_19) & CASCADE(A1L05);
+
+
+--A1L35 is D[8]~369 at LC3_3_E2
+--operation mode is normal
+
+A1L35 = (IN[7] # !F5_13) & CASCADE(A1L25);
+
+
+--A1L23 is D[1]~366 at LC4_9_F2
+--operation mode is normal
+
+A1L23 = (F3_19 $ F2_19 # !F7_19) & CASCADE(A1L92);
+
+
+--A1L13 is D[1]~362 at LC5_9_F2
+--operation mode is normal
+
+A1L13 = (F5_12 & S2_34 & (Q1_q[0] # !F6_19) # !F5_12 & (Q1_q[0] # !F6_19)) & CASCADE(A1L23);
+
+
+--K7_inst3 is MyALU:ALU|MyFA:inst6|inst3 at LC5_8_F2
+--operation mode is normal
+
+K7_inst3 = F6_16 $ F2_18 $ F3_18;
+
+
+--A1L43 is D[2]~244 at LC10_6_E2
+--operation mode is normal
+
+A1L43 = F6_19 & Q1_q[1] & (S2_111 # !F5_12) # !F6_19 & (S2_111 # !F5_12);
+
+
+--A1L53 is D[2]~363 at LC3_8_F2
+--operation mode is normal
+
+A1L53 = (A1L43 & (K8_inst2 $ K7_inst3 # !F7_19)) & CASCADE(A1L33);
+
+
+--A1L83 is D[3]~370 at LC3_5_E2
+--operation mode is normal
+
+A1L83 = (IN[2] # !F5_13) & CASCADE(A1L73);
+
+
+--A1L14 is D[4]~367 at LC8_7_F2
+--operation mode is normal
+
+A1L14 = (IN[3] # !F5_13) & CASCADE(A1L93);
+
+
+--K5_inst3 is MyALU:ALU|MyFA:inst4|inst3 at LC6_3_F2
+--operation mode is normal
+
+K5_inst3 = F6_16 $ F3_16 $ F2_16;
+
+
+--A1L04 is D[4]~364 at LC9_7_F2
+--operation mode is normal
+
+A1L04 = (K5_inst3 $ (K6_inst4 # K6_inst) # !F7_19) & CASCADE(A1L14);
+
+
+--A1L44 is D[5]~371 at LC7_9_F2
+--operation mode is normal
+
+A1L44 = (IN[4] # !F5_13) & CASCADE(A1L34);
+
+
+--S1L02 is MyPC:MYPC|74163:PC1|f74163:sub|140~4 at LC8_4_E2
+--operation mode is arithmetic
+
+S1L02 = S1_140;
+
+--S1L91 is MyPC:MYPC|74163:PC1|f74163:sub|140~3 at LC8_4_E2
+--operation mode is arithmetic
+
+S1L91 = CARRY(!S1_140);
+
+
+--N1L5 is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[0]~0 at LC5_10_E1
+--operation mode is normal
+
+N1L5 = !D1_inst4;
+
+
+--N1L6 is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[0]~1 at LC5_1_C1
+--operation mode is normal
+
+N1L6 = !D1_inst3;
+
+
+--N1L7 is MyControl:Control|lpm_rom0:inst10|lpm_rom:lpm_rom_component|altrom:srom|q[0]~2 at LC5_5_C1
+--operation mode is normal
+
+N1L7 = !D1_inst2;
+
+
+--CLOCK is CLOCK at Pin_95
+--operation mode is input
+
+CLOCK = INPUT();
+
+
+--START is START at Pin_20
+--operation mode is input
+
+START = INPUT();
+
+
+--IN[0] is IN[0] at Pin_92
+--operation mode is input
+
+IN[0] = INPUT();
+
+
+--IN[1] is IN[1] at Pin_23
+--operation mode is input
+
+IN[1] = INPUT();
+
+
+--IN[5] is IN[5] at Pin_105
+--operation mode is input
+
+IN[5] = INPUT();
+
+
+--IN[6] is IN[6] at Pin_118
+--operation mode is input
+
+IN[6] = INPUT();
+
+
+--IN[7] is IN[7] at Pin_30
+--operation mode is input
+
+IN[7] = INPUT();
+
+
+--IN[2] is IN[2] at Pin_26
+--operation mode is input
+
+IN[2] = INPUT();
+
+
+--IN[3] is IN[3] at Pin_119
+--operation mode is input
+
+IN[3] = INPUT();
+
+
+--IN[4] is IN[4] at Pin_114
+--operation mode is input
+
+IN[4] = INPUT();
+
+
+--T1 is T1 at Pin_84
+--operation mode is output
+
+T1 = OUTPUT(U1L1);
+
+
+--T2 is T2 at Pin_98
+--operation mode is output
+
+T2 = OUTPUT(U1_17);
+
+
+--T3 is T3 at Pin_97
+--operation mode is output
+
+T3 = OUTPUT(U1_18);
+
+
+--T4 is T4 at Pin_9
+--operation mode is output
+
+T4 = OUTPUT(U1L4);
+
+
+--LDAR is LDAR at Pin_79
+--operation mode is output
+
+LDAR = OUTPUT(F7_18);
+
+
+--IR[1] is IR[1] at Pin_44
+--operation mode is output
+
+IR[1] = OUTPUT(F4_19);
+
+
+--IR[2] is IR[2] at Pin_43
+--operation mode is output
+
+IR[2] = OUTPUT(F4_18);
+
+
+--IR[3] is IR[3] at Pin_31
+--operation mode is output
+
+IR[3] = OUTPUT(F4_17);
+
+
+--IR[4] is IR[4] at Pin_112
+--operation mode is output
+
+IR[4] = OUTPUT(F4_16);
+
+
+--IR[5] is IR[5] at Pin_120
+--operation mode is output
+
+IR[5] = OUTPUT(F4_15);
+
+
+--IR[6] is IR[6] at Pin_122
+--operation mode is output
+
+IR[6] = OUTPUT(F4_14);
+
+
+--IR[7] is IR[7] at Pin_68
+--operation mode is output
+
+IR[7] = OUTPUT(F4_13);
+
+
+--IR[8] is IR[8] at Pin_35
+--operation mode is output
+
+IR[8] = OUTPUT(F4_12);
+
+
+--M is M at Pin_24
+--operation mode is output
+
+M = OUTPUT(F6_16);
+
+
+--LDR0 is LDR0 at Pin_76
+--operation mode is output
+
+LDR0 = OUTPUT(F7_13);
+
+
+--nR0_BUS is nR0_BUS at Pin_25
+--operation mode is output
+
+nR0_BUS = OUTPUT(F6_15);
+
+
+--LDR2 is LDR2 at Pin_66
+--operation mode is output
+
+LDR2 = OUTPUT(F7_15);
+
+
+--LDR1 is LDR1 at Pin_75
+--operation mode is output
+
+LDR1 = OUTPUT(F7_14);
+
+
+--nALU_BUS is nALU_BUS at Pin_11
+--operation mode is output
+
+nALU_BUS = OUTPUT(F7_19);
+
+
+--nSW_BUS is nSW_BUS at Pin_8
+--operation mode is output
+
+nSW_BUS = OUTPUT(F5_13);
+
+
+--WE is WE at Pin_3
+--operation mode is output
+
+WE = OUTPUT(F7_12);
+
+
+--CE is CE at Pin_14
+--operation mode is output
+
+CE = OUTPUT(F6_19);
+
+
+--LOAD is LOAD at Pin_138
+--operation mode is output
+
+LOAD = OUTPUT(F6_18);
+
+
+--LDPC is LDPC at Pin_29
+--operation mode is output
+
+LDPC = OUTPUT(F7_17);
+
+
+--nPC_BUS is nPC_BUS at Pin_131
+--operation mode is output
+
+nPC_BUS = OUTPUT(F5_12);
+
+
+--LDIR is LDIR at Pin_133
+--operation mode is output
+
+LDIR = OUTPUT(F7_16);
+
+
+--CN is CN at Pin_104
+--operation mode is output
+
+CN = OUTPUT(F6_17);
+
+
+--AD[0] is AD[0] at Pin_103
+--operation mode is output
+
+AD[0] = OUTPUT(N1L5);
+
+
+--AD[1] is AD[1] at Pin_115
+--operation mode is output
+
+AD[1] = OUTPUT(N1L6);
+
+
+--AD[2] is AD[2] at Pin_113
+--operation mode is output
+
+AD[2] = OUTPUT(N1L7);
+
+
+--AD[3] is AD[3] at Pin_101
+--operation mode is output
+
+AD[3] = OUTPUT(D1_inst);
+
+
+--AD[4] is AD[4] at Pin_110
+--operation mode is output
+
+AD[4] = OUTPUT(D1_inst1);
+
+
+--AR[1] is AR[1] at Pin_39
+--operation mode is output
+
+AR[1] = OUTPUT(F1_19);
+
+
+--AR[2] is AR[2] at Pin_71
+--operation mode is output
+
+AR[2] = OUTPUT(F1_18);
+
+
+--AR[3] is AR[3] at Pin_70
+--operation mode is output
+
+AR[3] = OUTPUT(F1_17);
+
+
+--AR[4] is AR[4] at Pin_63
+--operation mode is output
+
+AR[4] = OUTPUT(F1_16);
+
+
+--AR[5] is AR[5] at Pin_38
+--operation mode is output
+
+AR[5] = OUTPUT(F1_15);
+
+
+--AR[6] is AR[6] at Pin_37
+--operation mode is output
+
+AR[6] = OUTPUT(F1_14);
+
+
+--AR[7] is AR[7] at Pin_48
+--operation mode is output
+
+AR[7] = OUTPUT(F1_13);
+
+
+--AR[8] is AR[8] at Pin_33
+--operation mode is output
+
+AR[8] = OUTPUT(F1_12);
+
+
+--BUS[1] is BUS[1] at Pin_13
+--operation mode is output
+
+BUS[1]_tri_out = TRI(A1L13, A1L03);
+BUS[1] = OUTPUT(BUS[1]_tri_out);
+
+
+--BUS[2] is BUS[2] at Pin_143
+--operation mode is output
+
+BUS[2]_tri_out = TRI(A1L53, A1L03);
+BUS[2] = OUTPUT(BUS[2]_tri_out);
+
+
+--BUS[3] is BUS[3] at Pin_47
+--operation mode is output
+
+BUS[3]_tri_out = TRI(A1L63, A1L03);
+BUS[3] = OUTPUT(BUS[3]_tri_out);
+
+
+--BUS[4] is BUS[4] at Pin_67
+--operation mode is output
+
+BUS[4]_tri_out = TRI(A1L04, A1L03);
+BUS[4] = OUTPUT(BUS[4]_tri_out);
+
+
+--BUS[5] is BUS[5] at Pin_135
+--operation mode is output
+
+BUS[5]_tri_out = TRI(A1L24, A1L03);
+BUS[5] = OUTPUT(BUS[5]_tri_out);
+
+
+--BUS[6] is BUS[6] at Pin_64
+--operation mode is output
+
+BUS[6]_tri_out = TRI(A1L54, A1L03);
+BUS[6] = OUTPUT(BUS[6]_tri_out);
+
+
+--BUS[7] is BUS[7] at Pin_140
+--operation mode is output
+
+BUS[7]_tri_out = TRI(A1L94, A1L03);
+BUS[7] = OUTPUT(BUS[7]_tri_out);
+
+
+--BUS[8] is BUS[8] at Pin_132
+--operation mode is output
+
+BUS[8]_tri_out = TRI(A1L15, A1L03);
+BUS[8] = OUTPUT(BUS[8]_tri_out);
+
+
+--DR1[1] is DR1[1] at Pin_102
+--operation mode is output
+
+DR1[1] = OUTPUT(F2_19);
+
+
+--DR1[2] is DR1[2] at Pin_130
+--operation mode is output
+
+DR1[2] = OUTPUT(F2_18);
+
+
+--DR1[3] is DR1[3] at Pin_65
+--operation mode is output
+
+DR1[3] = OUTPUT(F2_17);
+
+
+--DR1[4] is DR1[4] at Pin_46
+--operation mode is output
+
+DR1[4] = OUTPUT(F2_16);
+
+
+--DR1[5] is DR1[5] at Pin_2
+--operation mode is output
+
+DR1[5] = OUTPUT(F2_15);
+
+
+--DR1[6] is DR1[6] at Pin_10
+--operation mode is output
+
+DR1[6] = OUTPUT(F2_14);
+
+
+--DR1[7] is DR1[7] at Pin_15
+--operation mode is output
+
+DR1[7] = OUTPUT(F2_13);
+
+
+--DR1[8] is DR1[8] at Pin_32
+--operation mode is output
+
+DR1[8] = OUTPUT(F2_12);
+
+
+--DR2[1] is DR2[1] at Pin_111
+--operation mode is output
+
+DR2[1] = OUTPUT(F3_19);
+
+
+--DR2[2] is DR2[2] at Pin_62
+--operation mode is output
+
+DR2[2] = OUTPUT(F3_18);
+
+
+--DR2[3] is DR2[3] at Pin_60
+--operation mode is output
+
+DR2[3] = OUTPUT(F3_17);
+
+
+--DR2[4] is DR2[4] at Pin_49
+--operation mode is output
+
+DR2[4] = OUTPUT(F3_16);
+
+
+--DR2[5] is DR2[5] at Pin_121
+--operation mode is output
+
+DR2[5] = OUTPUT(F3_15);
+
+
+--DR2[6] is DR2[6] at Pin_136
+--operation mode is output
+
+DR2[6] = OUTPUT(F3_14);
+
+
+--DR2[7] is DR2[7] at Pin_139
+--operation mode is output
+
+DR2[7] = OUTPUT(F3_13);
+
+
+--DR2[8] is DR2[8] at Pin_50
+--operation mode is output
+
+DR2[8] = OUTPUT(F3_12);
+
+
+--PC[1] is PC[1] at Pin_142
+--operation mode is output
+
+PC[1] = OUTPUT(S2_34);
+
+
+--PC[2] is PC[2] at Pin_78
+--operation mode is output
+
+PC[2] = OUTPUT(S2_111);
+
+
+--PC[3] is PC[3] at Pin_80
+--operation mode is output
+
+PC[3] = OUTPUT(S2_122);
+
+
+--PC[4] is PC[4] at Pin_137
+--operation mode is output
+
+PC[4] = OUTPUT(S2_134);
+
+
+--PC[5] is PC[5] at Pin_141
+--operation mode is output
+
+PC[5] = OUTPUT(S1L81);
+
+
+--PC[6] is PC[6] at Pin_6
+--operation mode is output
+
+PC[6] = OUTPUT(S1_111);
+
+
+--PC[7] is PC[7] at Pin_7
+--operation mode is output
+
+PC[7] = OUTPUT(S1_122);
+
+
+--PC[8] is PC[8] at Pin_27
+--operation mode is output
+
+PC[8] = OUTPUT(S1_134);
+
+
+--R0[1] is R0[1] at Pin_41
+--operation mode is output
+
+R0[1]_tri_out = TRI(H1_13, F6_15);
+R0[1] = OUTPUT(R0[1]_tri_out);
+
+
+--R0[2] is R0[2] at Pin_40
+--operation mode is output
+
+R0[2]_tri_out = TRI(H1_14, F6_15);
+R0[2] = OUTPUT(R0[2]_tri_out);
+
+
+--R0[3] is R0[3] at Pin_69
+--operation mode is output
+
+R0[3]_tri_out = TRI(H1_15, F6_15);
+R0[3] = OUTPUT(R0[3]_tri_out);
+
+
+--R0[4] is R0[4] at Pin_59
+--operation mode is output
+
+R0[4]_tri_out = TRI(H1_16, F6_15);
+R0[4] = OUTPUT(R0[4]_tri_out);
+
+
+--R0[5] is R0[5] at Pin_56
+--operation mode is output
+
+R0[5]_tri_out = TRI(H1_17, F6_15);
+R0[5] = OUTPUT(R0[5]_tri_out);
+
+
+--R0[6] is R0[6] at Pin_53
+--operation mode is output
+
+R0[6]_tri_out = TRI(H1_18, F6_15);
+R0[6] = OUTPUT(R0[6]_tri_out);
+
+
+--R0[7] is R0[7] at Pin_124
+--operation mode is output
+
+R0[7]_tri_out = TRI(H1_19, F6_15);
+R0[7] = OUTPUT(R0[7]_tri_out);
+
+
+--R0[8] is R0[8] at Pin_127
+--operation mode is output
+
+R0[8]_tri_out = TRI(H1_20, F6_15);
+R0[8] = OUTPUT(R0[8]_tri_out);
+
+

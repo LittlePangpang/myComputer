@@ -1,0 +1,99 @@
+--D1_87 is 74161:inst|f74161:sub|87 at LC3_3_A2
+--operation mode is normal
+
+D1_87_lut_out = D1L2 & D1L5;
+D1_87 = DFFE(D1_87_lut_out, GLOBAL(CLK), GLOBAL(start), , );
+
+
+--D1_84 is 74161:inst|f74161:sub|84 at LC8_3_A2
+--operation mode is normal
+
+D1_84 = D1_9 & D1_87;
+
+
+--D1_99 is 74161:inst|f74161:sub|99 at LC1_3_A2
+--operation mode is normal
+
+D1_99_lut_out = D1_87 & !D1_99 & D1_84 # !D1_87 & (D1_99 $ D1_84);
+D1_99 = DFFE(D1_99_lut_out, GLOBAL(CLK), GLOBAL(start), , );
+
+
+--D1L2 is 74161:inst|f74161:sub|77~4 at LC10_3_A2
+--operation mode is normal
+
+D1L2 = !D1_87 # !D1_99;
+
+
+--D1_9 is 74161:inst|f74161:sub|9 at LC2_3_A2
+--operation mode is normal
+
+D1_9_lut_out = !D1_9 & D1L2;
+D1_9 = DFFE(D1_9_lut_out, GLOBAL(CLK), GLOBAL(start), , );
+
+
+--D1L5 is 74161:inst|f74161:sub|90~1 at LC9_3_A2
+--operation mode is normal
+
+D1L5 = D1_9 $ D1_87;
+
+
+--C1L1 is 74138:inst1|16~7 at LC6_3_A2
+--operation mode is normal
+
+C1L1 = D1_9 & !D1_87 & !D1_99;
+
+
+--C1_17 is 74138:inst1|17 at LC4_3_A2
+--operation mode is normal
+
+C1_17 = !D1_9 & D1_87 & !D1_99;
+
+
+--C1_18 is 74138:inst1|18 at LC5_3_A2
+--operation mode is normal
+
+C1_18 = D1_9 & D1_87 & !D1_99;
+
+
+--C1L4 is 74138:inst1|19~7 at LC7_3_A2
+--operation mode is normal
+
+C1L4 = !D1_9 & !D1_87 & D1_99;
+
+
+--CLK is CLK at Pin_95
+--operation mode is input
+
+CLK = INPUT();
+
+
+--start is start at Pin_127
+--operation mode is input
+
+start = INPUT();
+
+
+--T1 is T1 at Pin_131
+--operation mode is output
+
+T1 = OUTPUT(C1L1);
+
+
+--T2 is T2 at Pin_132
+--operation mode is output
+
+T2 = OUTPUT(C1_17);
+
+
+--T3 is T3 at Pin_122
+--operation mode is output
+
+T3 = OUTPUT(C1_18);
+
+
+--T4 is T4 at Pin_142
+--operation mode is output
+
+T4 = OUTPUT(C1L4);
+
+

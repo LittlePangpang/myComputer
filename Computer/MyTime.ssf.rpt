@@ -1,0 +1,758 @@
+MyTime - Quartus II Simulation Report File
+-------------------------------------------------------------------------------
+
++-------------------------------------------------------------------+
+|Report Information                                                 |
++------------------+------------------------------------------------+
+|Project           |C:\Users\Lenovo\Desktop\课设\db\MyCom.quartus_db|
+|Simulator Settings|MyTime                                          |
+|Quartus II Version|2.0 Build 188 01/22/2002                        |
++------------------+------------------------------------------------+
+
+Table of Contents
+    Simulator Report
+        Legal Notice
+        Project Settings
+            General Settings
+        Results for "MyTime" Simulator Settings
+            Summary
+            Simulator Settings
+            Simulation Waveforms
+            Messages
+            Processing Time
+        Results for "MyTime" Compiler Settings
+            Summary
+            Compiler Settings
+            Messages
+            Hierarchy
+            Equations
+            Device Options
+            Floorplan View
+            Pin-Out File
+            Post-Synthesis Resource Utilization by Entity
+            Resource Section
+                Resource Usage Summary
+                Input Pins
+                Output Pins
+                All Package Pins
+                Control Signals
+                Global & Other Fast Signals
+                Non-Global High Fan-Out Signals
+                Local Routing Interconnect
+                MegaLAB Interconnect
+                LAB External Interconnect
+                MegaLAB Usage Summary
+                Row Interconnect
+                LAB Column Interconnect
+                ESB Column Interconnect
+            Timing Analyses
+                Timing Settings
+                fmax (not incl. delays to/from pins)
+                Register-to-Register fmax
+                tco (Clock to Output Delays)
+            Processing Time
+
++-----------------------------------------------------------------------------+
+|Legal Notice                                                                 |
++-----------------------------------------------------------------------------+
+Copyright (C) 1991-2002 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+
+
++-----------------------------------------------------------------------------+
+|General Settings                                                             |
++-----------------------------------------------------------------------------+
++-----------------+-------------------+
+|Option           |Setting            |
++-----------------+-------------------+
+|Start date & time|01/08/2020 10:26:25|
+|Main task        |Simulation         |
+|Settings name    |MyTime             |
+|Simulation mode  |Timing             |
+|Compiler Settings|MyTime             |
++-----------------+-------------------+
+
++-----------------------------------------------------------------------------+
+|Summary                                                                      |
++-----------------------------------------------------------------------------+
++------+-------+
+|Option|Setting|
++------+-------+
+
++-----------------------------------------------------------------------------+
+|Simulator Settings                                                           |
++-----------------------------------------------------------------------------+
++-----------------------------------------------------+-------+
+|Option                                               |Setting|
++-----------------------------------------------------+-------+
+|Simulation mode                                      |Timing |
+|Simulator settings name                              |MyTime |
+|Start time                                           |0ns    |
+|Check outputs                                        |Off    |
+|Detect glitches                                      |Off    |
+|Glitch interval                                      |1ns    |
+|Report simulation coverage                           |On     |
+|Add pins automatically to simulation output waveforms|On     |
+|Estimate power consumption                           |Off    |
+|Detect setup and hold time violations                |Off    |
++-----------------------------------------------------+-------+
+
++-----------------------------------------------------------------------------+
+|Simulation Waveforms                                                         |
++-----------------------------------------------------------------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
++-----------------------------------------------------------------------------+
+|Messages                                                                     |
++-----------------------------------------------------------------------------+
+Error: No vector source file specified and default file C:\Users\Lenovo\Desktop\课设\MyTime.vwf does not exist
+Error: Design MyTime: Simulation was unsuccessful. 1 error, 0 warnings.
+
++-----------------------------------------------------------------------------+
+|Processing Time                                                              |
++-----------------------------------------------------------------------------+
++---------------+------------+
+|Module Name    |Elapsed Time|
++---------------+------------+
+|Netlist Builder|00:00:00    |
++---------------+------------+
+
++-----------------------------------------------------------------------------+
+|Summary                                                                      |
++-----------------------------------------------------------------------------+
++-----------------------------------+--------------------+
+|Processing status                  |Fitting Successful  |
+|Timing requirements/analysis status|No requirements     |
+|Chip name                          |MyTime              |
+|Device name                        |EP20K30ETC144-1     |
+|Total logic elements               | 10 / 1200 ( < 1 % )|
+|Total pins                         | 6 / 95 ( 6 % )     |
+|Total ESB bits                     | 0 / 24576 ( 0 % )  |
++-----------------------------------+--------------------+
+
++-----------------------------------------------------------------------------+
+|Compiler Settings                                                            |
++-----------------------------------------------------------------------------+
++------------------------------------------+------------------+
+|Option                                    |Setting           |
++------------------------------------------+------------------+
+|Chip name                                 |MyTime            |
+|Family name                               |APEX20KE          |
+|Focus entity name                         |Mytime            |
+|Device                                    |AUTO              |
+|Compilation mode                          |Full              |
+|Disk space/compilation speed tradeoff     |Normal            |
+|Preserve fewer node names                 |On                |
+|Optimize timing                           |Normal Compilation|
+|Optimize IOC register placement for timing|On                |
+|Generate timing analyses                  |On                |
+|Fast Fit compilation                      |Off               |
+|SignalProbe compilation                   |Off               |
++------------------------------------------+------------------+
+
++-----------------------------------------------------------------------------+
+|Messages                                                                     |
++-----------------------------------------------------------------------------+
+Info: Found 1 design units and 1 entities in source file C:\Users\Lenovo\Desktop\课设\MyFA.bdf
+  Info: Found entity 1: MyFA
+Info: Found 1 design units and 1 entities in source file C:\Users\Lenovo\Desktop\课设\MyALU.bdf
+  Info: Found entity 1: MyALU
+Info: Found 1 design units and 1 entities in source file C:\Users\Lenovo\Desktop\课设\MyCom.bdf
+  Info: Found entity 1: MyCom
+Info: Found 1 design units and 1 entities in source file C:\Users\Lenovo\Desktop\课设\MyTime.bdf
+  Info: Found entity 1: MyTime
+Info: Found 1 design units and 1 entities in source file C:\Users\Lenovo\Desktop\课设\MyPC.bdf
+  Info: Found entity 1: MyPC
+Info: Found 1 design units and 1 entities in source file C:\Users\Lenovo\Desktop\课设\MyControl.bdf
+  Info: Found entity 1: MyControl
+Info: Found 0 design units and 0 entities in source file C:\Users\Lenovo\Desktop\课设\MyControl.mif
+Info: Found 0 design units and 0 entities in source file C:\Users\Lenovo\Desktop\课设\MyRam.mif
+Info: Found 0 design units and 0 entities in source file C:\Users\Lenovo\Desktop\课设\MyCom.vwf
+Info: Found 1 design units and 1 entities in source file E:\Quartus2.0\libraries\others\maxplus2\74138.bdf
+  Info: Found entity 1: 74138
+Info: Found 1 design units and 1 entities in source file E:\Quartus2.0\libraries\others\maxplus2\74161.tdf
+  Info: Found entity 1: 74161
+Info: Found 1 design units and 1 entities in source file E:\Quartus2.0\libraries\others\maxplus2\f74161.bdf
+  Info: Found entity 1: f74161
+Info: Converted 1 single input CARRY primitives to CARRY_SUM primitives
+Warning: Ignored 1 CARRY_SUM primitives
+  Warning: Ignored 1 CARRY_SUM primitive(s) -- cannot place fan-out logic in single logic cell
+    Warning: Can't place logic fed by CARRY_SUM primitive 74161:inst|f74161:sub|81~0 into a single logic cell
+      Warning: Node 74161:inst|f74161:sub|90~1 of type LUT
+      Warning: Node 74161:inst|f74161:sub|84 of type LUT
+Info: Implemented 16 device resources
+  Info: Implemented 2 input pins
+  Info: Implemented 4 output pins
+  Info: Implemented 10 logic cells
+Info: Automatically selected device EP20K30ETC144-1 for design MyTime
+Info: Started  fitting attempt 1 on Wed Jan 08 2020 at 10:26:27
+Warning: Found pins functioning as undefined clocks and/or memory enables
+  Info: Assuming node CLK is an undefined clock
+Info: Clock CLK Internal fmax between source register 74161:inst|f74161:sub|99 and destination register 74161:inst|f74161:sub|87 is restricted to 290.02 MHz
+  Info: fmax restricted to Clock High delay (1.724 ns) plus Clock Low delay (1.724 ns) : restricted to 3.448 ns. Expand message to see actual delay path.
+    Info: + Longest register to register delay is 2.116 ns
+      Info: 1: + IC(0.000 ns) + CELL(0.161 ns) = 0.161 ns; Loc. = LC1_3_A2; REG Node = '74161:inst|f74161:sub|99'
+      Info: 2: + IC(0.380 ns) + CELL(0.798 ns) = 1.339 ns; Loc. = LC10_3_A2; COMB Node = '74161:inst|f74161:sub|77~4'
+      Info: 3: + IC(0.246 ns) + CELL(0.531 ns) = 2.116 ns; Loc. = LC3_3_A2; REG Node = '74161:inst|f74161:sub|87'
+    Info: - Smallest clock skew is 0.000 ns
+      Info: + Shortest clock path from clock CLK to destination register is 1.673 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.890 ns) = 0.890 ns; Loc. = Pin_95; CLK Node = 'CLK'
+        Info: 2: + IC(0.783 ns) + CELL(0.000 ns) = 1.673 ns; Loc. = LC3_3_A2; REG Node = '74161:inst|f74161:sub|87'
+      Info: - Longest clock path from clock CLK to source register is 1.673 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.890 ns) = 0.890 ns; Loc. = Pin_95; CLK Node = 'CLK'
+        Info: 2: + IC(0.783 ns) + CELL(0.000 ns) = 1.673 ns; Loc. = LC1_3_A2; REG Node = '74161:inst|f74161:sub|99'
+    Info: + Micro clock to output delay of source is 0.335 ns
+    Info: + Micro setup delay of destination is 0.198 ns
+Info: Design MyTime: Full compilation was successful. 0 errors, 2 warnings
+
++-----------------------------------------------------------------------------+
+|Hierarchy                                                                    |
++-----------------------------------------------------------------------------+
+SimulationHierarchy
+  MyTime
+    74161:inst
+      f74161:sub
+    74138:inst1
+
++-----------------------------------------------------------------------------+
+|Equations                                                                    |
++-----------------------------------------------------------------------------+
+The equations can be found in C:\Users\Lenovo\Desktop\课设\MyTime.eqn.
+
++-----------------------------------------------------------------------------+
+|Device Options                                                               |
++-----------------------------------------------------------------------------+
++----------------------------------------------------------------+------------------------+
+|Option                                                          |Setting                 |
++----------------------------------------------------------------+------------------------+
+|Auto-restart configuration after error                          |Off                     |
+|Release clears before tri-states                                |Off                     |
+|Enable user-supplied start-up clock (CLKUSR)                    |Off                     |
+|Enable device-wide reset (DEV_CLRn)                             |Off                     |
+|Enable device-wide output enable (DEV_OE)                       |Off                     |
+|Enable INIT_DONE output                                         |Off                     |
+|Auto-increment JTAG user code for multiple configuration devices|On                      |
+|Disable CONF_DONE and nSTATUS pull-ups on configuration device  |Off                     |
+|Generate Tabular Text File (.ttf)                               |Off                     |
+|Generate Raw Binary File (.rbf)                                 |Off                     |
+|Generate Hexadecimal Output File (.hexout)                      |Off                     |
+|Configuration scheme                                            |Passive Serial          |
+|Hexadecimal Output File count direction                         |Up                      |
+|JTAG user code for target device                                |0XFFFFFFFF              |
+|JTAG user code for configuration device                         |0XFFFFFFFF              |
+|Hexadecimal Output File start address                           |0                       |
+|Reserve all unused pins                                         |As output driving ground|
+|Configuration device                                            |EPC2                    |
+|Use check sum as user code                                      |Off                     |
+|Use check sum as user code for EPROM                            |Off                     |
++----------------------------------------------------------------+------------------------+
+
++-----------------------------------------------------------------------------+
+|Floorplan View                                                               |
++-----------------------------------------------------------------------------+
+Floorplan report data cannot be output to ASCII.
+Please use Quartus II to view the floorplan report data.
+
++-----------------------------------------------------------------------------+
+|Pin-Out File                                                                 |
++-----------------------------------------------------------------------------+
+The pin-out file can be found in C:\Users\Lenovo\Desktop\课设\MyTime.pin.
+
++-----------------------------------------------------------------------------+
+|Post-Synthesis Resource Utilization by Entity                                |
++-----------------------------------------------------------------------------+
++--------------------------+-----------+---------+---------------+----+-----------------------------+
+|Compilation Hierarchy Node|Logic Cells|Registers|Memory Segments|Pins|Full Hierarchy Name          |
++--------------------------+-----------+---------+---------------+----+-----------------------------+
+||MyTime                   |10         |3        |0              |6   ||MyTime                      |
+|   |74138:inst1|          |4          |0        |0              |0   ||MyTime|74138:inst1          |
+|   |74161:inst|           |6          |3        |0              |0   ||MyTime|74161:inst           |
+|      |f74161:sub|        |6          |3        |0              |0   ||MyTime|74161:inst|f74161:sub|
++--------------------------+-----------+---------+---------------+----+-----------------------------+
+
++-----------------------------------------------------------------------------+
+|Resource Usage Summary                                                       |
++-----------------------------------------------------------------------------+
++----------------------------+------------------------+
+|Resource                    |Usage                   |
++----------------------------+------------------------+
+|Clock pins                  |1                       |
+|Fast I/O pins               |1                       |
+|Global signals              |2                       |
+|I/O pins                    |4                       |
+|Logic elements              |10                      |
+|ESBs                        | 0 / 12 ( 0 % )         |
+|Macrocells                  |0                       |
+|Flipflops                   |3                       |
+|FastRow interconnects       | 0 / 120 ( 0 % )        |
+|Maximum fan-out             |8                       |
+|Maximum fan-out node        |74161:inst|f74161:sub|87|
+|Total fan-out               |29                      |
+|Average fan-out             |1.8                     |
+|ESB pterm bits used         | 0 / 24576 ( 0 % )      |
+|ESB non-CAM memory bits used| 0 / 24576 ( 0 % )      |
+|ESB CAM bits used           | 0 / 24576 ( 0 % )      |
+|Total ESB bits used         | 0 / 24576 ( 0 % )      |
++----------------------------+------------------------+
+
++-----------------------------------------------------------------------------+
+|Input Pins                                                                   |
++-----------------------------------------------------------------------------+
++-----+-----+-----------+------------+----+-------+------+------------+-----------------------+-------------+--------------+-----------+---------------+-------------+--------------------+------------+
+|Name |Pin #|MegaLAB Row|MegaLAB Col.|Col.|Fan-Out|Global|I/O Register|Use Local Routing Input|Power Up High|Slow Slew Rate|Delay Chain|PCI I/O Enabled|Single-Pin CE|FastRow Interconnect|I/O Standard|
++-----+-----+-----------+------------+----+-------+------+------------+-----------------------+-------------+--------------+-----------+---------------+-------------+--------------------+------------+
+|CLK  |95   |--         |--          |--  |3      |yes   |no          |no                     |no           |no            |no         |no             |no           |no                  |LVTTL       |
+|start|127  |--         |--          |--  |3      |yes   |no          |no                     |no           |no            |no         |no             |no           |no                  |LVTTL       |
++-----+-----+-----------+------------+----+-------+------+------------+-----------------------+-------------+--------------+-----------+---------------+-------------+--------------------+------------+
+
++-----------------------------------------------------------------------------+
+|Output Pins                                                                  |
++-----------------------------------------------------------------------------+
++----+-----+-----------+------------+----+------------+------------------------+-------------+--------------+---------------+---------------+-------------+-------------+----------+------------+
+|Name|Pin #|MegaLAB Row|MegaLAB Col.|Col.|I/O Register|Use Local Routing Output|Power Up High|Slow Slew Rate|TCO Delay Chain|PCI I/O Enabled|Single-Pin OE|Single-Pin CE|Open Drain|I/O Standard|
++----+-----+-----------+------------+----+------------+------------------------+-------------+--------------+---------------+---------------+-------------+-------------+----------+------------+
+|T1  |131  |--         |2           |9   |no          |no                      |no           |no            |no             |no             |no           |no           |no        |LVTTL       |
+|T2  |132  |--         |2           |8   |no          |no                      |no           |no            |no             |no             |no           |no           |no        |LVTTL       |
+|T3  |122  |--         |1           |10  |no          |no                      |no           |no            |no             |no             |no           |no           |no        |LVTTL       |
+|T4  |142  |--         |2           |2   |no          |no                      |no           |no            |no             |no             |no           |no           |no        |LVTTL       |
++----+-----+-----------+------------+----+------------+------------------------+-------------+--------------+---------------+---------------+-------------+-------------+----------+------------+
+
++-----------------------------------------------------------------------------+
+|All Package Pins                                                             |
++-----------------------------------------------------------------------------+
++-----+----------+------------+
+|Pin #|Usage     |I/O Standard|
++-----+----------+------------+
+|1    |VCC_INT   |
+|2    |GND*      |
+|3    |GND*      |
+|4    |GND       |
+|5    |VCC_IO    |
+|6    |GND*      |
+|7    |GND*      |
+|8    |GND*      |
+|9    |GND*      |
+|10   |GND*      |
+|11   |GND*      |
+|12   |GND_IO    |
+|13   |GND*      |
+|14   |GND*      |
+|15   |GND*      |
+|16   |VCC_INT   |
+|17   |GND       |
+|18   |^MSEL0    |
+|19   |^MSEL1    |
+|20   |GND+      |
+|21   |VCCINT    |
+|22   |^NCONFIG  |
+|23   |GND+      |
+|24   |GND*      |
+|25   |GND*      |
+|26   |GND*      |
+|27   |GND*      |
+|28   |VCC_IO    |
+|29   |GND*      |
+|30   |GND*      |
+|31   |GND*      |
+|32   |GND*      |
+|33   |GND*      |
+|34   |GND       |
+|35   |GND*      |
+|36   |VCC_INT   |
+|37   |GND*      |
+|38   |GND*      |
+|39   |GND*      |
+|40   |GND*      |
+|41   |GND*      |
+|42   |GND_IO    |
+|43   |GND*      |
+|44   |GND*      |
+|45   |VCC_IO    |
+|46   |GND*      |
+|47   |GND*      |
+|48   |GND*      |
+|49   |GND*      |
+|50   |GND*      |
+|51   |#TMS      |
+|52   |#TCK      |
+|53   |GND+      |
+|54   |GND       |
+|55   |VCC_INT   |
+|56   |GND+      |
+|57   |^NSTATUS  |
+|58   |^CONF_DONE|
+|59   |GND*      |
+|60   |GND*      |
+|61   |VCC_IO    |
+|62   |GND*      |
+|63   |GND*      |
+|64   |GND*      |
+|65   |GND*      |
+|66   |GND*      |
+|67   |GND*      |
+|68   |GND*      |
+|69   |GND*      |
+|70   |GND*      |
+|71   |GND*      |
+|72   |GND_IO    |
+|73   |VCC_INT   |
+|74   |GND       |
+|75   |GND*      |
+|76   |GND*      |
+|77   |GND       |
+|78   |GND*      |
+|79   |GND*      |
+|80   |GND*      |
+|81   |GND*      |
+|82   |GND_CKOUT2|
+|83   |VCC_CKOUT2|
+|84   |GND*      |
+|85   |VCC_CKLK2 |
+|86   |VCC_INT   |
+|87   |GND       |
+|88   |GND_CKLK2 |
+|89   |VCC_IO    |
+|90   |#TDI      |
+|91   |^nCE      |
+|92   |GND+      |
+|93   |^DCLK     |
+|94   |^DATA0    |
+|95   |CLK       |LVTTL       |
+|96   |GND+      |
+|97   |GND*      |
+|98   |GND*      |
+|99   |GND_CKLK4 |
+|100  |VCC_CKLK4 |
+|101  |GND*      |
+|102  |GND*      |
+|103  |GND*      |
+|104  |GND*      |
+|105  |GND*      |
+|106  |GND_IO    |
+|107  |VCC_IO    |
+|108  |VCC_INT   |
+|109  |GND*      |
+|110  |GND*      |
+|111  |GND*      |
+|112  |GND*      |
+|113  |GND*      |
+|114  |GND*      |
+|115  |GND*      |
+|116  |VCC_IO    |
+|117  |GND*      |
+|118  |GND*      |
+|119  |GND*      |
+|120  |GND*      |
+|121  |GND*      |
+|122  |T3        |LVTTL       |
+|123  |#TDO      |
+|124  |GND+      |
+|125  |VCC_INT   |
+|126  |GND       |
+|127  |start     |LVTTL       |
+|128  |^nCEO     |
+|129  |#TRST     |
+|130  |GND*      |
+|131  |T1        |LVTTL       |
+|132  |T2        |LVTTL       |
+|133  |GND*      |
+|134  |GND_IO    |
+|135  |GND*      |
+|136  |GND*      |
+|137  |GND*      |
+|138  |GND*      |
+|139  |GND*      |
+|140  |GND*      |
+|141  |GND*      |
+|142  |T4        |LVTTL       |
+|143  |GND*      |
+|144  |VCC_IO    |
++-----+----------+------------+
+
++-----------------------------------------------------------------------------+
+|Control Signals                                                              |
++-----------------------------------------------------------------------------+
++-----+-----+-------+------------+------------+
+|Name |Pin #|Fan-Out|Usage       |Global Usage|
++-----+-----+-------+------------+------------+
+|CLK  |95   |3      |Clock       |Pin         |
+|start|127  |3      |Async. clear|Pin         |
++-----+-----+-------+------------+------------+
+
++-----------------------------------------------------------------------------+
+|Global & Other Fast Signals                                                  |
++-----------------------------------------------------------------------------+
++-----+-----+-------+------+
+|Name |Pin #|Fan-Out|Global|
++-----+-----+-------+------+
+|CLK  |95   |3      |yes   |
+|start|127  |3      |yes   |
++-----+-----+-------+------+
+
++-----------------------------------------------------------------------------+
+|Non-Global High Fan-Out Signals                                              |
++-----------------------------------------------------------------------------+
++--------------------------+-------+
+|Name                      |Fan-Out|
++--------------------------+-------+
+|74161:inst|f74161:sub|87  |8      |
+|74161:inst|f74161:sub|9   |7      |
+|74161:inst|f74161:sub|99  |6      |
+|74161:inst|f74161:sub|77~4|2      |
+|74161:inst|f74161:sub|84  |1      |
+|74138:inst1|18            |1      |
+|74138:inst1|17            |1      |
+|74138:inst1|19~7          |1      |
+|74138:inst1|16~7          |1      |
+|74161:inst|f74161:sub|90~1|1      |
++--------------------------+-------+
+
++-----------------------------------------------------------------------------+
+|Local Routing Interconnect                                                   |
++-----------------------------------------------------------------------------+
++---------------------------+------------------+
+|Local Routing Interconnects|Number of MegaLABs|
++---------------------------+------------------+
+|0                          |11                |
+|1                          |0                 |
+|2                          |0                 |
+|3                          |0                 |
+|4                          |0                 |
+|5                          |0                 |
+|6                          |0                 |
+|7                          |1                 |
++---------------------------+------------------+
+
++-----------------------------------------------------------------------------+
+|MegaLAB Interconnect                                                         |
++-----------------------------------------------------------------------------+
++---------------------+------------------+
+|MegaLAB Interconnects|Number of MegaLABs|
++---------------------+------------------+
+|0                    |10                |
+|1                    |1                 |
+|2                    |0                 |
+|3                    |1                 |
++---------------------+------------------+
+
++-----------------------------------------------------------------------------+
+|LAB External Interconnect                                                    |
++-----------------------------------------------------------------------------+
++--------------------------+---------------+
+|LAB External Interconnects|Number MegaLABs|
++--------------------------+---------------+
+|0                         |10             |
+|1                         |1              |
+|2                         |0              |
+|3                         |1              |
++--------------------------+---------------+
+
++-----------------------------------------------------------------------------+
+|MegaLAB Usage Summary                                                        |
++-----------------------------------------------------------------------------+
++------------+-----------+--------------------------+----------------------------+-----------------------------+-------------------------+--------------------------+------+-------+-----------+-------------------------+---------------+
+|MegaLAB Name|Total Cells|MegaLAB Interconnect Lines|Column Fast Lines Driving In|Column Fast Lines Driving Out|Row Fast Lines Driving In|Row Fast Lines Driving Out|Fan-In|Fan-Out|Local Lines|LAB External Interconnect|Control Signals|
++------------+-----------+--------------------------+----------------------------+-----------------------------+-------------------------+--------------------------+------+-------+-----------+-------------------------+---------------+
+| A1         |0          |1                         |0                           |0                            |1                        |0                         |0     |0      |0          |1                        |0              |
+| A2         |10         |3                         |0                           |0                            |0                        |1                         |2     |4      |7          |3                        |2              |
+| B1         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| B2         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| C1         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| C2         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| D1         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| D2         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| E1         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| E2         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| F1         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
+| F2         |0          |0                         |0                           |0                            |0                        |0                         |0     |0      |0          |0                        |0              |
++------------+-----------+--------------------------+----------------------------+-----------------------------+-------------------------+--------------------------+------+-------+-----------+-------------------------+---------------+
+
++-----------------------------------------------------------------------------+
+|Row Interconnect                                                             |
++-----------------------------------------------------------------------------+
++-----+---------------+------------------+-----------------+
+|Row  |Lines Available|Lines Used        |Half-Lines Used  |
++-----+---------------+------------------+-----------------+
+| A   |100            | 1 / 100 ( 1 % )  | 0 / 200 ( 0 % ) |
+| B   |100            | 0 / 100 ( 0 % )  | 0 / 200 ( 0 % ) |
+| C   |100            | 0 / 100 ( 0 % )  | 0 / 200 ( 0 % ) |
+| D   |100            | 0 / 100 ( 0 % )  | 0 / 200 ( 0 % ) |
+| E   |100            | 0 / 100 ( 0 % )  | 0 / 200 ( 0 % ) |
+| F   |100            | 0 / 100 ( 0 % )  | 0 / 200 ( 0 % ) |
+|Total|600            | 1 / 600 ( < 1 % )| 0 / 1200 ( 0 % )|
++-----+---------------+------------------+-----------------+
+
++-----------------------------------------------------------------------------+
+|LAB Column Interconnect                                                      |
++-----------------------------------------------------------------------------+
++------------+----+---------------+-----------------+-----------------+
+|MegaLAB Col.|Col.|Lines Available|Lines Used       |Half-Lines Used  |
++------------+----+---------------+-----------------+-----------------+
+|1           |1   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |2   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |3   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |4   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |5   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |6   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |7   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |8   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |9   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |10  |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|1           |11  |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |1   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |2   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |3   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |4   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |5   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |6   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |7   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |8   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |9   |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |10  |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|2           |11  |80             | 0 / 80 ( 0 % )  | 0 / 160 ( 0 % ) |
+|Total       |1760           | 0 / 1760 ( 0 % )| 0 / 3520 ( 0 % )|
++------------+----+---------------+-----------------+-----------------+
+
++-----------------------------------------------------------------------------+
+|ESB Column Interconnect                                                      |
++-----------------------------------------------------------------------------+
++-----+---------------+----------------+----------------+
+|Col. |Lines Available|Lines Used      |Half-Lines Used |
++-----+---------------+----------------+----------------+
+|0    |128            | 0 / 128 ( 0 % )| 0 / 256 ( 0 % )|
+|1    |128            | 0 / 128 ( 0 % )| 0 / 256 ( 0 % )|
+|Total|256            | 0 / 256 ( 0 % )| 0 / 512 ( 0 % )|
++-----+---------------+----------------+----------------+
+
++-----------------------------------------------------------------------------+
+|Timing Settings                                                              |
++-----------------------------------------------------------------------------+
++---------------+-----------+----------------+----------------------------------------------------------------+------------------+
+|Assignment File|Source Name|Destination Name|Option                                                          |Setting           |
++---------------+-----------+----------------+----------------------------------------------------------------+------------------+
+|MyCom.psf      |Include external delays to/from device pins in fmax calculations|Off               |
+|MyCom.psf      |Run All Timing Analyses                                         |Off               |
+|MyCom.psf      |Ignore user-defined clock settings                              |Off               |
+|MyCom.psf      |Default hold multicycle                                         |Same As Multicycle|
+|MyCom.psf      |Cut off feedback from I/O pins                                  |On                |
+|MyCom.psf      |Cut off clear and preset signal paths                           |On                |
+|MyCom.psf      |Cut off read during write signal paths                          |On                |
+|MyCom.psf      |Cut paths between unrelated clock domains                       |On                |
+|MyCom.psf      |Number of paths to report                                       |200               |
+|MyCom.psf      |Number of destination nodes to report                           |10                |
+|MyCom.psf      |Number of source nodes to report per destination node           |10                |
+|MyCom.psf      |Maximum Strongly Connected Component loop size                  |50                |
+|Device name                                                     |EP20K30ETC144-1   |
++---------------+-----------+----------------+----------------------------------------------------------------+------------------+
+
++-----------------------------------------------------------------------------+
+|fmax (not incl. delays to/from pins)                                         |
++-----------------------------------------------------------------------------+
++---------------------------------+-------------+------------------------+
+|Clock Name                       |Required fmax|Actual fmax (period)    |
+|   -- Destination Register Name  |             |                        |
+|      -- Source Register Name    |             |                        |
++---------------------------------+-------------+------------------------+
+|CLK                              |None         |Restricted to 290.02 MHz|
+|   -- 74161:inst|f74161:sub|87   |None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|99|None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|9 |None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|87|None         |Restricted to 290.02 MHz|
+|   -- 74161:inst|f74161:sub|99   |None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|9 |None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|87|None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|99|None         |Restricted to 290.02 MHz|
+|   -- 74161:inst|f74161:sub|9    |None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|99|None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|87|None         |Restricted to 290.02 MHz|
+|      -- 74161:inst|f74161:sub|9 |None         |Restricted to 290.02 MHz|
++---------------------------------+-------------+------------------------+
+
++-----------------------------------------------------------------------------+
+|Register-to-Register fmax                                                    |
++-----------------------------------------------------------------------------+
++------------------------+-------------------------+-----------------+----------------------+-------------+------------------------+
+|Source Register Name    |Destination Register Name|Source Clock Name|Destination Clock Name|Required fmax|Actual fmax (period)    |
++------------------------+-------------------------+-----------------+----------------------+-------------+------------------------+
+|74161:inst|f74161:sub|99|74161:inst|f74161:sub|87 |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
+|74161:inst|f74161:sub|9 |74161:inst|f74161:sub|87 |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
+|74161:inst|f74161:sub|9 |74161:inst|f74161:sub|99 |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
+|74161:inst|f74161:sub|99|74161:inst|f74161:sub|9  |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
+|74161:inst|f74161:sub|87|74161:inst|f74161:sub|87 |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
+|74161:inst|f74161:sub|87|74161:inst|f74161:sub|9  |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
+|74161:inst|f74161:sub|87|74161:inst|f74161:sub|99 |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
+|74161:inst|f74161:sub|9 |74161:inst|f74161:sub|9  |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
+|74161:inst|f74161:sub|99|74161:inst|f74161:sub|99 |CLK              |CLK                   |None         |Restricted to 290.02 MHz|
++------------------------+-------------------------+-----------------+----------------------+-------------+------------------------+
+
++-----------------------------------------------------------------------------+
+|tco (Clock to Output Delays)                                                 |
++-----------------------------------------------------------------------------+
++------------------------------+------------+----------+
+|Output Name                   |Required tco|Actual tco|
+|   -- Register Name           |            |          |
+|      -- Clock Name           |            |          |
++------------------------------+------------+----------+
+|T3                            |None        |8.153 ns  |
+|   -- 74161:inst|f74161:sub|9 |None        |8.153 ns  |
+|      -- CLK                  |None        |8.153 ns  |
+|   -- 74161:inst|f74161:sub|87|None        |8.117 ns  |
+|      -- CLK                  |None        |8.117 ns  |
+|   -- 74161:inst|f74161:sub|99|None        |8.051 ns  |
+|      -- CLK                  |None        |8.051 ns  |
+|T1                            |None        |7.083 ns  |
+|   -- 74161:inst|f74161:sub|9 |None        |7.083 ns  |
+|      -- CLK                  |None        |7.083 ns  |
+|   -- 74161:inst|f74161:sub|87|None        |7.047 ns  |
+|      -- CLK                  |None        |7.047 ns  |
+|   -- 74161:inst|f74161:sub|99|None        |6.981 ns  |
+|      -- CLK                  |None        |6.981 ns  |
+|T2                            |None        |7.046 ns  |
+|   -- 74161:inst|f74161:sub|9 |None        |7.046 ns  |
+|      -- CLK                  |None        |7.046 ns  |
+|   -- 74161:inst|f74161:sub|87|None        |7.010 ns  |
+|      -- CLK                  |None        |7.010 ns  |
+|   -- 74161:inst|f74161:sub|99|None        |6.944 ns  |
+|      -- CLK                  |None        |6.944 ns  |
+|T4                            |None        |6.925 ns  |
+|   -- 74161:inst|f74161:sub|9 |None        |6.925 ns  |
+|      -- CLK                  |None        |6.925 ns  |
+|   -- 74161:inst|f74161:sub|87|None        |6.889 ns  |
+|      -- CLK                  |None        |6.889 ns  |
+|   -- 74161:inst|f74161:sub|99|None        |6.823 ns  |
+|      -- CLK                  |None        |6.823 ns  |
++------------------------------+------------+----------+
+
++-----------------------------------------------------------------------------+
+|Processing Time                                                              |
++-----------------------------------------------------------------------------+
++-----------------+------------+
+|Module Name      |Elapsed Time|
++-----------------+------------+
+|Database Builder |00:00:00    |
+|Logic Synthesizer|00:00:00    |
+|Fitter           |00:00:00    |
+|Assembler        |00:00:00    |
+|Delay Annotator  |00:00:00    |
+|Timing Analyzer  |00:00:00    |
+|Total            |00:00:00    |
++-----------------+------------+
+
